@@ -1,9 +1,10 @@
-body {
-    font-family: Arial, sans-serif;
+/* Reset defaults and force dark mode */
+html, body {
     margin: 0;
-    padding: 20px;
+    padding: 0;
     background: #1a1a1a; /* Dark background */
     color: #e0e0e0; /* Light text */
+    font-family: Arial, sans-serif;
 }
 
 header {
@@ -21,30 +22,30 @@ p {
     color: #cccccc;
 }
 
+/* Centered Grid */
 .project-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 25px;
     max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 10px;
+    margin: 20px auto; /* Centers the grid */
+    padding: 0 20px; /* Ensures edge spacing */
 }
 
+/* Card Styling with Tilt */
 .project {
     background: #2c2c2c;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    border: 2px solid #00b4d8;
     text-align: center;
-    border: 2px solid #00b4d8; /* Cyan border */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    position: relative;
-    overflow: hidden;
 }
 
 .project:hover {
-    transform: translateY(-10px) rotate(2deg); /* Lift and slight tilt */
-    box-shadow: 0 10px 20px rgba(0, 180, 216, 0.5); /* Glowing shadow */
+    transform: translateY(-10px) rotate(2deg);
+    box-shadow: 0 10px 20px rgba(0, 180, 216, 0.5);
 }
 
 .project img {
@@ -56,12 +57,10 @@ p {
 
 .project h3 {
     margin: 10px 0;
-    font-size: 1.5em;
 }
 
 .project p {
     margin: 10px 0;
-    font-size: 1em;
 }
 
 .details-btn {
@@ -72,14 +71,13 @@ p {
     text-decoration: none;
     border-radius: 5px;
     margin-top: 15px;
-    transition: background 0.3s ease;
 }
 
 .details-btn:hover {
-    background: #0096c7; /* Darker cyan */
+    background: #0096c7;
 }
 
-/* Modal Styles (unchanged) */
+/* Modal */
 .modal {
     display: none;
     position: fixed;
@@ -122,6 +120,7 @@ footer a {
     color: #00b4d8;
     text-decoration: none;
 }
+
 footer a:hover {
     color: #0096c7;
 }
