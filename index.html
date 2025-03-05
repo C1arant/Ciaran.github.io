@@ -3,36 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ciaran Thistle | Game Dev Portfolio</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background: #f4f4f4; }
-        header { text-align: center; padding: 20px; }
-        .project { margin: 20px 0; padding: 15px; background: white; border-radius: 5px; }
-        img { max-width: 100%; height: auto; }
-    </style>
+    <title>Your Name | Game Dev Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Your Name</h1>
-        <p>Game Developer | Creator of Fun Stuff</p>
+        <h1>Ciaran Thistle</h1>
+        <p>Game Developer | Bringing Ideas to Life</p>
     </header>
-    <section>
+    <section id="projects">
         <h2>My Projects</h2>
-        <div class="project">
-            <h3>Game Title 1</h3>
-            <img src="images/game1-screenshot.jpg" alt="Game 1 Screenshot">
-            <p>A 2D platformer built with Unity. Jump, run, and avoid spikes!</p>
-            <a href="https://link-to-demo-or-repo">Play Demo | View Code</a>
-        </div>
-        <div class="project">
-            <h3>Game Title 2</h3>
-            <img src="images/game2-screenshot.jpg" alt="Game 2 Screenshot">
-            <p>A puzzle game made in Godot. Solve tricky levels!</p>
-            <a href="https://link-to-demo-or-repo">Play Demo | View Code</a>
+        <div class="project-grid">
+            <div class="project" data-id="1">
+                <h3>Game 1</h3>
+                <img src="images/game1.jpg" alt="Game 1 Screenshot">
+                <p>Short description of Game 1.</p>
+                <a href="#" class="details-btn">Details</a>
+            </div>
+            <div class="project" data-id="2">
+                <h3>Game 2</h3>
+                <img src="images/game2.jpg" alt="Game 2 Screenshot">
+                <p>Short description of Game 2.</p>
+                <a href="#" class="details-btn">Details</a>
+            </div>
+            <!-- Add 4 more projects like this -->
         </div>
     </section>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3 id="modal-title"></h3>
+            <iframe id="modal-video" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+            <p id="modal-desc"></p>
+            <a id="modal-link" href="#" target="_blank">Play Demo / View Code</a>
+        </div>
+    </div>
     <footer>
-        <p>Contact: ciaran.thistle@gmail.com | <a href="https://github.com/C1arant">GitHub</a></p>
+        <p>Contact: your.email@example.com | <a href="https://github.com/C1arant">GitHub</a></p>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>
