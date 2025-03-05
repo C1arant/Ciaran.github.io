@@ -29,22 +29,28 @@ const projects = {
         desc: "a little physics based driving game i made in a couple hours.",
         link: "https://github.com/C1arant/game5"
     },
+    6: {
+        title: "Frontier Manager",
+        video: "https://youtu.be/adfmsK73c90",
+        desc: "a cute little idle game where you deploy satellites and make money :D.",
+        link: "https://youtu.be/adfmsK73c90"
+    },
     7: {
         title: "Pixel Dungeon",
         video: "https://youtu.be/adfmsK73c90",
-        desc: "a cute little idle game where you deploy satellites and make money :D.",
+        desc: "A retro style dungeon crawler.",
         link: "https://github.com/C1arant/game6"
     },
     8: {
         title: "Space Invaders",
         video: "https://youtu.be/adfmsK73c90",
-        desc: "a cute little idle game where you deploy satellites and make money :D.",
+        desc: "A modern take on a classic.",
         link: "https://github.com/C1arant/game6"
     },
     9: {
         title: "Super Jump",
         video: "https://youtu.be/adfmsK73c90",
-        desc: "a cute little idle game where you deploy satellites and make money :D.",
+        desc: "A fast paced platformer.",
         link: "https://github.com/C1arant/game6"
     }
 };
