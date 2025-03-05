@@ -11,7 +11,7 @@ const projects = {
         video: "", 
         desc: "Fast-paced tactical shooter.", 
         link: "#",
-        platform: "" // No platform
+        platform: "steam" // No platform
     },
     3: { 
         title: "Project Luna", 
@@ -46,21 +46,21 @@ const projects = {
         video: "", 
         desc: "A retro-style dungeon crawler.", 
         link: "#",
-        platform: "" // No platform
+        platform: "itch" // No platform
     },
     8: { 
         title: "Space Invaders", 
         video: "", 
         desc: "A modern take on a classic.", 
         link: "#",
-        platform: "" // No platform
+        platform: "itch" // No platform
     },
     9: { 
         title: "Super Jump", 
         video: "", 
         desc: "A fast-paced platformer.", 
         link: "#",
-        platform: "" // No platform
+        platform: "itch" // No platform
     }
 };
 
