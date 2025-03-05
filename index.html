@@ -159,6 +159,17 @@
         .play-btn:hover {
             background: #0096c7;
         }
+        #modal-video {
+            display: block;
+            margin: 15px auto;
+        }
+        #modal-image {
+            display: none;
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 15px auto;
+        }
         footer {
             text-align: center;
             padding: 20px;
@@ -289,6 +300,7 @@
             <span class="close">×</span>
             <h3 id="modal-title"></h3>
             <iframe id="modal-video" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+            <img id="modal-image" src="" alt="Project Screenshot">
             <p id="modal-desc"></p>
             <a href="#" class="play-btn" id="modal-link"><i class="fa-solid fa-download"></i> Play</a>
         </div>
