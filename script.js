@@ -1,38 +1,50 @@
 const projects = {
     1: {
-        title: "Game 1",
+        title: "Cosmo's Adventure",
         video: "https://www.youtube.com/embed/VIDEO_ID_1",
-        desc: "A wild adventure in a pixelated realm, built with Unity.",
+        desc: "A chill 3d platformer.",
         link: "https://github.com/C1arant/game1"
     },
     2: {
-        title: "Game 2",
+        title: "Cyber League",
         video: "https://www.youtube.com/embed/VIDEO_ID_2",
-        desc: "Puzzles that twist your mind, made in Godot.",
+        desc: "Fast pased tactical shooter.",
         link: "https://github.com/C1arant/game2"
     },
     3: {
-        title: "Game 3",
-        video: "https://www.youtube.com/embed/VIDEO_ID_3",
-        desc: "Fast-paced action awaits, coded in C#.",
+        title: "Project Luna",
+        video: "https://youtu.be/qrkHyet6y5o",
+        desc: "Welcome to the world of Project Luna, A massive open world space adventure.",
         link: "https://github.com/C1arant/game3"
     },
     4: {
-        title: "Game 4",
-        video: "https://www.youtube.com/embed/VIDEO_ID_4",
-        desc: "Explore a mysterious universe, built with Unreal.",
+        title: "Robo Rob",
+        video: "https://youtu.be/fy6DlFiszWI",
+        desc: "Rage inducing Puzzle platformer.",
         link: "https://github.com/C1arant/game4"
     },
     5: {
-        title: "Game 5",
-        video: "https://www.youtube.com/embed/VIDEO_ID_5",
-        desc: "Strategy meets chaos, a passion project.",
+        title: "Silly Drifters",
+        video: "https://youtu.be/XK1AhpbhdwE",
+        desc: "a little physics based driving game i made in a couple hours.",
         link: "https://github.com/C1arant/game5"
     },
-    6: {
-        title: "Game 6",
-        video: "https://www.youtube.com/embed/VIDEO_ID_6",
-        desc: "A cozy game to unwind, made for fun.",
+    7: {
+        title: "Pixel Dungeon",
+        video: "https://youtu.be/adfmsK73c90",
+        desc: "a cute little idle game where you deploy satellites and make money :D.",
+        link: "https://github.com/C1arant/game6"
+    },
+    8: {
+        title: "Space Invaders",
+        video: "https://youtu.be/adfmsK73c90",
+        desc: "a cute little idle game where you deploy satellites and make money :D.",
+        link: "https://github.com/C1arant/game6"
+    },
+    9: {
+        title: "Super Jump",
+        video: "https://youtu.be/adfmsK73c90",
+        desc: "a cute little idle game where you deploy satellites and make money :D.",
         link: "https://github.com/C1arant/game6"
     }
 };
