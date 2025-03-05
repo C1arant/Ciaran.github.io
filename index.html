@@ -131,6 +131,7 @@
             max-width: 600px;
             border-radius: 8px;
             color: #e0e0e0;
+            text-align: center;
         }
         .close {
             float: right;
@@ -140,6 +141,23 @@
         }
         .close:hover {
             color: #ff5555;
+        }
+        .play-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: #00b4d8;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            margin-top: 15px;
+            font-size: 1em;
+        }
+        .play-btn:hover {
+            background: #0096c7;
         }
         footer {
             text-align: center;
@@ -165,7 +183,7 @@
     <!-- About Me Section -->
     <section id="about">
         <h2>About Me</h2>
-        <p>Hi, I’m Ciaran Thistle, a game developer Student with a knack for creating diverse and engaging experiences.</p>
+        <p>Hi, I’m CiaranThistle, a passionate game developer with a knack for creating diverse and engaging experiences. From chill platformers to fast-paced shooters, I love blending creativity and code to build worlds players can get lost in.</p>
     </section>
 
     <!-- Projects Section -->
@@ -272,17 +290,16 @@
             <h3 id="modal-title"></h3>
             <iframe id="modal-video" width="560" height="315" frameborder="0" allowfullscreen></iframe>
             <p id="modal-desc"></p>
-            <a id="modal-link" href="#" target="_blank">Play Demo / View Code</a>
+            <a href="#" class="play-btn" id="modal-link"><i class="fa-solid fa-download"></i> Play</a>
         </div>
     </div>
 
     <footer>
         <p>Contact: ciaran.thistle@gmail.com | 
            <a href="https://github.com/C1arant"><i class="fa-brands fa-github"></i> GitHub</a> | 
-           <a href="#"><i class="fa-brands fa-discord"></i> Discord</a> | 
-           <a href="#"><i class="fa-brands fa-twitch"></i> Twitch</a> | 
-           <a href="#"><i class="fa-brands fa-bluesky"></i> Bluesky</a> | 
-           <a href="#"><i class="fa-brands fa-youtube"></i> YouTube</a>
+           <a href="https://discord.gg/djEUKBUjG2"><i class="fa-brands fa-discord"></i> Discord</a> | 
+           <a href="https://www.twitch.tv/devciaran"><i class="fa-brands fa-twitch"></i> Twitch</a> | 
+           <a href="https://www.youtube.com/@CiarantDev"><i class="fa-brands fa-youtube"></i> YouTube</a>
         </p>
     </footer>
     <script src="script.js"></script>

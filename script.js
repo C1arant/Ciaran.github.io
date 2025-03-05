@@ -1,57 +1,57 @@
 const projects = {
-    1: {
-        title: "Cosmo's Adventure",
-        video: "https://www.youtube.com/embed/VIDEO_ID_1",
-        desc: "A chill 3d platformer.",
-        link: "https://github.com/C1arant/game1"
+    1: { 
+        title: "Cosmo's Adventure", 
+        video: "", 
+        desc: "A chill 3D platformer.", 
+        link: "https://ciarantdev.itch.io/cosmos-adventure-demo" // Replace with actual play/download link
     },
-    2: {
-        title: "Cyber League",
-        video: "https://www.youtube.com/embed/VIDEO_ID_2",
-        desc: "Fast pased tactical shooter.",
-        link: "https://github.com/C1arant/game2"
+    2: { 
+        title: "Cyber League", 
+        video: "", 
+        desc: "Fast-paced tactical shooter.", 
+        link: "#" // Replace with actual play/download link
     },
-    3: {
-        title: "Project Luna",
-        video: "https://youtu.be/qrkHyet6y5o",
-        desc: "Welcome to the world of Project Luna, A massive open world space adventure.",
-        link: "https://github.com/C1arant/game3"
+    3: { 
+        title: "Project Luna", 
+        video: "https://youtu.be/qrkHyet6y5o", 
+        desc: "Sci-fi adventure on Steam.", 
+        link: "https://store.steampowered.com/app/1950760/Project_Luna/" // Replace with Steam or download link
     },
-    4: {
-        title: "Robo Rob",
-        video: "https://youtu.be/fy6DlFiszWI",
-        desc: "Rage inducing Puzzle platformer.",
-        link: "https://github.com/C1arant/game4"
+    4: { 
+        title: "Robo Rob", 
+        video: "https://youtu.be/fy6DlFiszWI", 
+        desc: "Rage-inducing puzzle platformer on Steam.", 
+        link: "https://store.steampowered.com/app/2291910/Robo_Rob/" // Replace with Steam or download link
     },
-    5: {
-        title: "Silly Drifters",
-        video: "https://youtu.be/XK1AhpbhdwE",
-        desc: "a little physics based driving game i made in a couple hours.",
-        link: "https://github.com/C1arant/game5"
+    5: { 
+        title: "Silly Drifters", 
+        video: "https://youtu.be/XK1AhpbhdwE", 
+        desc: "A physics-based driving game.", 
+        link: "https://ciarantdev.itch.io/sillydrifters" // Replace with actual play/download link
     },
-    6: {
-        title: "Frontier Manager",
-        video: "https://youtu.be/adfmsK73c90",
-        desc: "a cute little idle game where you deploy satellites and make money :D.",
-        link: "https://youtu.be/adfmsK73c90"
+    6: { 
+        title: "Frontier Manager", 
+        video: "https://youtu.be/adfmsK73c90", 
+        desc: "An idle space sim.", 
+        link: "https://ciarantdev.itch.io/satellite" // Replace with actual play/download link
     },
-    7: {
-        title: "Pixel Dungeon",
-        video: "https://youtu.be/adfmsK73c90",
-        desc: "A retro style dungeon crawler.",
-        link: "https://github.com/C1arant/game6"
+    7: { 
+        title: "Pixel Dungeon", 
+        video: "", 
+        desc: "A retro-style dungeon crawler.", 
+        link: "#" // Replace with actual play/download link
     },
-    8: {
-        title: "Space Invaders",
-        video: "https://youtu.be/adfmsK73c90",
-        desc: "A modern take on a classic.",
-        link: "https://github.com/C1arant/game6"
+    8: { 
+        title: "Space Invaders", 
+        video: "", 
+        desc: "A modern take on a classic.", 
+        link: "#" // Replace with actual play/download link
     },
-    9: {
-        title: "Super Jump",
-        video: "https://youtu.be/adfmsK73c90",
-        desc: "A fast paced platformer.",
-        link: "https://github.com/C1arant/game6"
+    9: { 
+        title: "Super Jump", 
+        video: "", 
+        desc: "A fast-paced platformer.", 
+        link: "#" // Replace with actual play/download link
     }
 };
 
