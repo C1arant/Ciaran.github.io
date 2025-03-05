@@ -1,5 +1,6 @@
 /* Reset defaults and force dark mode */
-html, body {
+html, body 
+{
     margin: 0;
     padding: 0;
     background: #1a1a1a; /* Dark background */
@@ -7,14 +8,17 @@ html, body {
     font-family: Arial, sans-serif;
 }
 
-header {
+header 
+{
     text-align: center;
     padding: 20px;
     background: #2c2c2c;
     border-bottom: 2px solid #444;
 }
 
-h1, h2, h3 {
+h1, h2, h3 
+{
+    text-align: center;
     color: #ffffff;
 }
 
@@ -23,7 +27,8 @@ p {
 }
 
 /* Centered Grid */
-.project-grid {
+.project-grid 
+{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 25px;
@@ -33,7 +38,8 @@ p {
 }
 
 /* Card Styling with Tilt */
-.project {
+.project 
+{
     background: #2c2c2c;
     padding: 20px;
     border-radius: 10px;
@@ -43,27 +49,32 @@ p {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.project:hover {
+.project:hover 
+{
     transform: translateY(-10px) rotate(2deg);
     box-shadow: 0 10px 20px rgba(0, 180, 216, 0.5);
 }
 
-.project img {
+.project img 
+{
     max-width: 100%;
     height: auto;
     border-radius: 8px;
     margin-bottom: 15px;
 }
 
-.project h3 {
+.project h3 
+{
     margin: 10px 0;
 }
 
-.project p {
+.project p 
+{
     margin: 10px 0;
 }
 
-.details-btn {
+.details-btn 
+{
     display: inline-block;
     padding: 10px 20px;
     background: #00b4d8;
@@ -73,12 +84,14 @@ p {
     margin-top: 15px;
 }
 
-.details-btn:hover {
-    background: #0096c7;
+.details-btn:hover 
+{
+    background: #0521f4;
 }
 
 /* Modal */
-.modal {
+.modal 
+{
     display: none;
     position: fixed;
     top: 0;
@@ -88,7 +101,8 @@ p {
     background: rgba(0, 0, 0, 0.9);
 }
 
-.modal-content {
+.modal-content 
+{
     background: #2c2c2c;
     margin: 10% auto;
     padding: 20px;
@@ -98,29 +112,34 @@ p {
     color: #e0e0e0;
 }
 
-.close {
+.close 
+{
     float: right;
     font-size: 28px;
     color: #fff;
     cursor: pointer;
 }
 
-.close:hover {
+.close:hover 
+{
     color: #ff5555;
 }
 
-footer {
+footer 
+{
     text-align: center;
     padding: 20px;
     background: #2c2c2c;
     margin-top: 20px;
 }
 
-footer a {
+footer a 
+{
     color: #00b4d8;
     text-decoration: none;
 }
 
-footer a:hover {
-    color: #0096c7;
+footer a:hover 
+{
+    color: #c000c7;
 }
