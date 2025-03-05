@@ -2,15 +2,23 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 20px;
-    background: #1a1a1a;
-    color: #333;
+    background: #1a1a1a; /* Dark background */
+    color: #e0e0e0; /* Light text */
 }
 
 header {
     text-align: center;
     padding: 20px;
-    background: #fff;
-    border-bottom: 2px solid #ddd;
+    background: #2c2c2c; /* Darker header */
+    border-bottom: 2px solid #444;
+}
+
+h1, h2, h3 {
+    color: #ffffff; /* Bright headings */
+}
+
+p {
+    color: #cccccc; /* Softer text */
 }
 
 .project-grid {
@@ -18,34 +26,42 @@ header {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
     max-width: 1200px;
-    margin: 20px auto;
+    margin: 0 auto; /* Centers the grid */
+    padding: 0 10px; /* Small padding for edges */
 }
 
 .project {
-    background: white;
+    background: #2c2c2c; /* Dark card background */
     padding: 15px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    text-align: center; /* Center content in each project */
+    transition: transform 0.2s; /* Hover effect */
+}
+
+.project:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
 }
 
 .project img {
     max-width: 100%;
     height: auto;
     border-radius: 5px;
+    border: 1px solid #444; /* Subtle border */
 }
 
 .details-btn {
     display: inline-block;
     padding: 8px 16px;
-    background: #007bff;
-    color: white;
+    background: #00b4d8; /* Cyan button */
+    color: #fff;
     text-decoration: none;
     border-radius: 5px;
+    margin-top: 10px;
 }
 
 .details-btn:hover {
-    background: #0056b3;
+    background: #0096c7; /* Darker cyan on hover */
 }
 
 /* Modal Styles */
@@ -56,20 +72,41 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.8);
+    background: rgba(0, 0, 0, 0.9);
 }
 
 .modal-content {
-    background: white;
+    background: #2c2c2c;
     margin: 10% auto;
     padding: 20px;
     width: 80%;
     max-width: 600px;
-    border-radius: 5px;
+    border-radius: 8px;
+    color: #e0e0e0;
 }
 
 .close {
     float: right;
-    font-size: 24px;
+    font-size: 28px;
+    color: #fff;
     cursor: pointer;
+}
+
+.close:hover {
+    color: #ff5555; /* Red on hover */
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #2c2c2c;
+    margin-top: 20px;
+}
+
+footer a {
+    color: #00b4d8;
+    text-decoration: none;
+}
+footer a:hover {
+    color: #0096c7;
 }
