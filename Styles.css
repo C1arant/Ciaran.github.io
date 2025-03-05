@@ -9,62 +9,77 @@ body {
 header {
     text-align: center;
     padding: 20px;
-    background: #2c2c2c; /* Darker header */
+    background: #2c2c2c;
     border-bottom: 2px solid #444;
 }
 
 h1, h2, h3 {
-    color: #ffffff; /* Bright headings */
+    color: #ffffff;
 }
 
 p {
-    color: #cccccc; /* Softer text */
+    color: #cccccc;
 }
 
 .project-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    gap: 25px;
     max-width: 1200px;
-    margin: 0 auto; /* Centers the grid */
-    padding: 0 10px; /* Small padding for edges */
+    margin: 0 auto;
+    padding: 0 10px;
 }
 
 .project {
-    background: #2c2c2c; /* Dark card background */
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    text-align: center; /* Center content in each project */
-    transition: transform 0.2s; /* Hover effect */
+    background: #2c2c2c;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    border: 2px solid #00b4d8; /* Cyan border */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
 .project:hover {
-    transform: scale(1.05); /* Slight zoom on hover */
+    transform: translateY(-10px) rotate(2deg); /* Lift and slight tilt */
+    box-shadow: 0 10px 20px rgba(0, 180, 216, 0.5); /* Glowing shadow */
 }
 
 .project img {
     max-width: 100%;
     height: auto;
-    border-radius: 5px;
-    border: 1px solid #444; /* Subtle border */
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.project h3 {
+    margin: 10px 0;
+    font-size: 1.5em;
+}
+
+.project p {
+    margin: 10px 0;
+    font-size: 1em;
 }
 
 .details-btn {
     display: inline-block;
-    padding: 8px 16px;
-    background: #00b4d8; /* Cyan button */
+    padding: 10px 20px;
+    background: #00b4d8;
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
-    margin-top: 10px;
+    margin-top: 15px;
+    transition: background 0.3s ease;
 }
 
 .details-btn:hover {
-    background: #0096c7; /* Darker cyan on hover */
+    background: #0096c7; /* Darker cyan */
 }
 
-/* Modal Styles */
+/* Modal Styles (unchanged) */
 .modal {
     display: none;
     position: fixed;
@@ -93,7 +108,7 @@ p {
 }
 
 .close:hover {
-    color: #ff5555; /* Red on hover */
+    color: #ff5555;
 }
 
 footer {
