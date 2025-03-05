@@ -139,6 +139,7 @@
             border-radius: 8px;
             color: #e0e0e0;
             text-align: center;
+            position: relative;
         }
         .close {
             float: right;
@@ -175,6 +176,13 @@
             font-size: 1.5em;
             color: #00b4d8;
             margin: 15px auto;
+        }
+        #modal-icons {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 1.5em;
+            color: #00b4d8;
         }
         footer {
             text-align: center;
@@ -308,6 +316,7 @@
     <div id="modal" class="modal">
         <div class="modal-content">
             <span class="close">×</span>
+            <div id="modal-icons"></div>
             <h3 id="modal-title"></h3>
             <iframe id="modal-video" width="560" height="315" frameborder="0" allowfullscreen></iframe>
             <p id="modal-coming-soon">COMING SOON</p>
