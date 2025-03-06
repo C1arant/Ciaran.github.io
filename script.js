@@ -1,15 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
     // Project Data for Modal and Progress Sync
     const projects = {
-        1: { video: "", desc: "A chill 3D platformer.", link: "https://ciarantdev.itch.io/cosmos-adventure-demo", progress: 100, github: "https://github.com/C1arant/Cosmos-Adventure" },
+        1: { video: "", desc: "A chill 3D platformer.", link: "https://ciarantdev.itch.io/cosmos-adventure-demo", progress: 10, github: "https://github.com/C1arant/Cosmos-Adventure" },
         2: { video: "", desc: "Fast-paced tactical shooter.", link: "#", progress: 60, github: "https://github.com/C1arant/Cyber-League" },
-        3: { video: "https://www.youtube.com/embed/qrkHyet6y5o", desc: "Sci-fi adventure on Steam.", link: "https://store.steampowered.com/app/1950760/Project_Luna/", progress: 100, github: "https://github.com/C1arant/U.ProjectLuna" },
+        3: { video: "https://www.youtube.com/embed/qrkHyet6y5o", desc: "Sci-fi adventure on Steam.", link: "https://store.steampowered.com/app/1950760/Project_Luna/", progress: 0, github: "https://github.com/C1arant/U.ProjectLuna" },
         4: { video: "https://www.youtube.com/embed/fy6DlFiszWI", desc: "Rage-inducing puzzle platformer on Steam.", link: "https://store.steampowered.com/app/2291910/Robo_Rob/", progress: 100, github: "https://github.com/C1arant/RoboRob" },
         5: { video: "https://www.youtube.com/embed/XK1AhpbhdwE", desc: "A physics-based driving game.", link: "https://ciarantdev.itch.io/sillydrifters", progress: 100, github: "https://github.com/C1arant/Silly-Drifters" },
         6: { video: "https://www.youtube.com/embed/adfmsK73c90", desc: "An idle space sim.", link: "https://ciarantdev.itch.io/satellite", progress: 100, github: "https://github.com/C1arant/U.FrontiereManager" },
-        7: { video: "", desc: "A chill 3D adventure.", link: "#", progress: 30, github: "https://github.com/C1arant/Wild-Heart" },
-        8: { video: "", desc: "A scifi co-op adventure.", link: "#", progress: 70, github: "https://github.com/C1arant/SpaceRPG" },
-        9: { video: "", desc: "A fast-paced platformer.", link: "#", progress: 50, github: "https://github.com/C1arant/FPS" }
+        7: { video: "", desc: "A chill 3D adventure.", link: "#", progress: 0, github: "https://github.com/C1arant/Wild-Heart" },
+        8: { video: "", desc: "A scifi co-op adventure.", link: "#", progress: 0, github: "https://github.com/C1arant/SpaceRPG" },
+        9: { video: "", desc: "A fast-paced platformer.", link: "#", progress: 0, github: "https://github.com/C1arant/FPS" }
     };
 
     // Sync Progress Bars from projects Object
@@ -64,20 +64,29 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             // Fetch Last Updated from GitHub
+            lastUpdated.textContent = "Last Updated: Loading...";
             if (project.github) {
                 try {
                     const repoPath = project.github.replace("https://github.com/", "");
-                    const response = await fetch(`https://api.github.com/repos/${repoPath}/commits`);
+                    const response = await fetch(`https://api.github.com/repos/${repoPath}/commits`, {
+                        headers: {
+                            // Optional: Add GitHub token if rate-limited (uncomment and replace with your token)
+                            // "Authorization": "token YOUR_PERSONAL_ACCESS_TOKEN"
+                        }
+                    });
+                    if (!response.ok) {
+                        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                    }
                     const commits = await response.json();
                     if (commits.length > 0) {
                         const lastCommitDate = new Date(commits[0].commit.author.date);
                         lastUpdated.textContent = `Last Updated: ${lastCommitDate.toLocaleDateString()}`;
                     } else {
-                        lastUpdated.textContent = "Last Updated: Not available";
+                        lastUpdated.textContent = "Last Updated: No commits found";
                     }
                 } catch (error) {
                     lastUpdated.textContent = "Last Updated: Unable to fetch";
-                    console.error("GitHub API error:", error);
+                    console.error(`GitHub API error for ${project.github}:`, error.message);
                 }
             } else {
                 lastUpdated.textContent = "Last Updated: No GitHub repo";
@@ -105,14 +114,12 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // Badge Modal Logic
+    // Badge Modal Logic (Updated to match your latest HTML)
     const badges = {
-        1: { title: "Bronze Twitch", image: "images/bronze-twitch.png", desc: "Reached Bronze Tier on Twitch" },
-        2: { title: "Silver Twitch", image: "images/silver-twitch.png", desc: "Reached Silver Tier on Twitch" },
-        3: { title: "Gold Twitch", image: "images/gold-twitch.png", desc: "Reached Gold Tier on Twitch" },
-        4: { title: "Bronze YouTube", image: "images/bronze-youtube.png", desc: "Reached Bronze Tier on YouTube" },
-        5: { title: "Silver YouTube", image: "images/silver-youtube.png", desc: "Reached Silver Tier on YouTube" },
-        6: { title: "Gold YouTube", image: "images/gold-youtube.png", desc: "Reached Gold Tier on YouTube" },
+        1: { title: "Bronze Twitch", image: "images/bronze-twitch.png", desc: "Reached 200 followers" },
+        4: { title: "Bronze YouTube", image: "images/bronze-youtube.png", desc: "Reached 500 subscribers" },
+        5: { title: "Silver YouTube", image: "images/silver-youtube.png", desc: "Reached 1000 subscribers" },
+        6: { title: "Gold YouTube", image: "images/gold-youtube.png", desc: "Reached 3000 subscribers" },
         7: { title: "Steam Upload", image: "images/steam-badge.png", desc: "Uploaded a Game to Steam" }
     };
 
