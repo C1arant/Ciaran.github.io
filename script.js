@@ -1,29 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Replace with your new PAT with 'repo' scope
-    const GITHUB_TOKEN = "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"; // Replace this with your new token
-
-    // Project Data for Modal and Progress Sync
+    // Project Data for Modal
     const projects = {
-        1: { video: "", desc: "A chill 3D platformer.", link: "https://ciarantdev.itch.io/cosmos-adventure-demo", progress: 10, github: "https://github.com/C1arant/Cosmos-Adventure" },
-        2: { video: "", desc: "Fast-paced tactical shooter.", link: "#", progress: 60, github: "https://github.com/C1arant/Cyber-League" },
-        3: { video: "https://www.youtube.com/embed/qrkHyet6y5o", desc: "Sci-fi adventure on Steam.", link: "https://store.steampowered.com/app/1950760/Project_Luna/", progress: 0, github: "https://github.com/C1arant/U.ProjectLuna" },
-        4: { video: "https://www.youtube.com/embed/fy6DlFiszWI", desc: "Rage-inducing puzzle platformer on Steam.", link: "https://store.steampowered.com/app/2291910/Robo_Rob/", progress: 100, github: "https://github.com/C1arant/RoboRob" },
-        5: { video: "https://www.youtube.com/embed/XK1AhpbhdwE", desc: "A physics-based driving game.", link: "https://ciarantdev.itch.io/sillydrifters", progress: 100, github: "https://github.com/C1arant/Silly-Drifters" },
-        6: { video: "https://www.youtube.com/embed/adfmsK73c90", desc: "An idle space sim.", link: "https://ciarantdev.itch.io/satellite", progress: 100, github: "https://github.com/C1arant/U.FrontiereManager" },
-        7: { video: "", desc: "A chill 3D adventure.", link: "#", progress: 0, github: "https://github.com/C1arant/Wild-Heart" },
-        8: { video: "", desc: "A scifi co-op adventure.", link: "#", progress: 0, github: "https://github.com/C1arant/SpaceRPG" },
-        9: { video: "https://www.youtube.com/embed/7PZcmBfICuI", desc: "A fast-paced platformer.", link: "#", progress: 0, github: "https://github.com/C1arant/FPS" }
+        1: { video: "", desc: "A chill 3D platformer.", link: "https://ciarantdev.itch.io/cosmos-adventure-demo" },
+        2: { video: "", desc: "Fast-paced tactical shooter.", link: "#" },
+        3: { video: "https://www.youtube.com/embed/qrkHyet6y5o", desc: "Sci-fi adventure on Steam.", link: "https://store.steampowered.com/app/1950760/Project_Luna/" },
+        4: { video: "https://www.youtube.com/embed/fy6DlFiszWI", desc: "Rage-inducing puzzle platformer on Steam.", link: "https://store.steampowered.com/app/2291910/Robo_Rob/" },
+        5: { video: "https://www.youtube.com/embed/XK1AhpbhdwE", desc: "A physics-based driving game.", link: "https://ciarantdev.itch.io/sillydrifters" },
+        6: { video: "https://www.youtube.com/embed/adfmsK73c90", desc: "An idle space sim.", link: "https://ciarantdev.itch.io/satellite" },
+        7: { video: "", desc: "A chill 3D adventure.", link: "#" },
+        8: { video: "", desc: "A scifi co-op adventure.", link: "#" },
+        9: { video: "https://www.youtube.com/embed/7PZcmBfICuI", desc: "A fast-paced platformer.", link: "#" }
     };
-
-    // Sync Progress Bars from projects Object
-    document.querySelectorAll(".project").forEach(project => {
-        const projectId = project.getAttribute("data-id");
-        const projectData = projects[projectId];
-        if (projectData) {
-            const progressFill = project.querySelector(".progress-fill");
-            progressFill.style.width = `${projectData.progress}%`;
-        }
-    });
 
     // Project Modal Logic
     const projectModal = document.getElementById("modal");
@@ -35,14 +22,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const projectModalIcons = document.getElementById("modal-icons");
     const projectCloseBtn = document.querySelector("#modal .close");
 
-    // Add Last Updated Element to Modal
-    const lastUpdated = document.createElement("p");
-    lastUpdated.id = "modal-last-updated";
-    lastUpdated.style.color = "#cccccc";
-    projectModal.querySelector(".modal-content").insertBefore(lastUpdated, projectModalLink);
-
     document.querySelectorAll(".details-btn").forEach(btn => {
-        btn.addEventListener("click", async (e) => {
+        btn.addEventListener("click", (e) => {
             e.preventDefault();
             const projectId = btn.parentElement.getAttribute("data-id");
             const project = projects[projectId];
@@ -66,36 +47,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 projectModalComingSoon.style.display = "block";
             }
 
-            // Fetch Last Updated from GitHub with PAT
-            lastUpdated.textContent = "Last Updated: Loading...";
-            if (project.github) {
-                try {
-                    const repoPath = project.github.replace("https://github.com/", "");
-                    const response = await fetch(`https://api.github.com/repos/${repoPath}/commits`, {
-                        headers: {
-                            "Authorization": `Bearer ${GITHUB_TOKEN}`,
-                            "Accept": "application/vnd.github+json"
-                        }
-                    });
-                    if (!response.ok) {
-                        const errorText = await response.text();
-                        throw new Error(`HTTP ${response.status}: ${response.statusText} - ${errorText}`);
-                    }
-                    const commits = await response.json();
-                    if (Array.isArray(commits) && commits.length > 0) {
-                        const lastCommitDate = new Date(commits[0].commit.author.date);
-                        lastUpdated.textContent = `Last Updated: ${lastCommitDate.toLocaleDateString()}`;
-                    } else {
-                        lastUpdated.textContent = "Last Updated: No commits found";
-                    }
-                } catch (error) {
-                    lastUpdated.textContent = `Last Updated: Fetch failed (${error.message})`;
-                    console.error(`GitHub API error for ${project.github}:`, error.message);
-                }
-            } else {
-                lastUpdated.textContent = "Last Updated: No GitHub repo";
-            }
-
             projectModal.style.display = "block";
         });
     });
@@ -105,7 +56,6 @@ document.addEventListener("DOMContentLoaded", () => {
         projectModalVideo.src = "";
         projectModalComingSoon.style.display = "none";
         projectModalIcons.innerHTML = "";
-        lastUpdated.textContent = "";
     });
 
     window.addEventListener("click", (e) => {
@@ -114,11 +64,10 @@ document.addEventListener("DOMContentLoaded", () => {
             projectModalVideo.src = "";
             projectModalComingSoon.style.display = "none";
             projectModalIcons.innerHTML = "";
-            lastUpdated.textContent = "";
         }
     });
 
-    // Badge Modal Logic (Updated to match your latest HTML)
+    // Badge Modal Logic
     const badges = {
         1: { title: "Bronze Twitch", image: "images/bronze-twitch.png", desc: "Reached 200 followers" },
         4: { title: "Bronze YouTube", image: "images/bronze-youtube.png", desc: "Reached 500 subscribers" },
