@@ -4,63 +4,63 @@ const projects = {
         video: "", 
         desc: "A chill 3D platformer.", 
         link: "https://ciarantdev.itch.io/cosmos-adventure-demo",
-        platform: "itch" // Added platform indicator
+        platform: "itch"
     },
     2: { 
         title: "Cyber League", 
         video: "", 
         desc: "Fast-paced tactical shooter.", 
         link: "#",
-        platform: "steam" // No platform
+        platform: "steam"
     },
     3: { 
         title: "Project Luna", 
         video: "https://www.youtube.com/embed/qrkHyet6y5o", 
         desc: "Sci-fi adventure on Steam.", 
         link: "https://store.steampowered.com/app/1950760/Project_Luna/",
-        platform: "steam" // Added platform indicator
+        platform: "steam"
     },
     4: { 
         title: "Robo Rob", 
         video: "https://www.youtube.com/embed/fy6DlFiszWI", 
         desc: "Rage-inducing puzzle platformer on Steam.", 
         link: "https://store.steampowered.com/app/2291910/Robo_Rob/",
-        platform: "steam" // Added platform indicator
+        platform: "steam"
     },
     5: { 
         title: "Silly Drifters", 
         video: "https://www.youtube.com/embed/XK1AhpbhdwE", 
         desc: "A physics-based driving game.", 
         link: "https://ciarantdev.itch.io/sillydrifters",
-        platform: "itch" // Added platform indicator
+        platform: "itch"
     },
     6: { 
         title: "Frontier Manager", 
         video: "https://www.youtube.com/embed/adfmsK73c90", 
         desc: "An idle space sim.", 
         link: "https://ciarantdev.itch.io/satellite",
-        platform: "itch" // Added platform indicator
+        platform: "itch"
     },
     7: { 
         title: "Wild Heart", 
         video: "", 
-        desc: "A chill 3d adventure.", 
+        desc: "A chill 3D adventure.", 
         link: "#",
-        platform: "itch" // No platform
+        platform: "itch"
     },
     8: { 
-        title: "Starfarer", 
+        title: "Star Farer", 
         video: "", 
         desc: "A scifi co-op adventure.", 
         link: "#",
-        platform: "itch" // No platform
+        platform: "itch"
     },
     9: { 
         title: "Carbon", 
-        video: "", 
+        video: "https://www.youtube.com/embed/7PZcmBfICuI", 
         desc: "A fast-paced platformer.", 
         link: "#",
-        platform: "itch" // No platform
+        platform: "itch"
     }
 };
 
@@ -84,7 +84,7 @@ document.querySelectorAll(".details-btn").forEach(btn => {
         modalLink.href = project.link;
 
         // Handle platform icons
-        modalIcons.innerHTML = ""; // Clear previous icons
+        modalIcons.innerHTML = "";
         if (project.platform === "steam") {
             modalIcons.innerHTML = '<i class="fab fa-steam"></i>';
         } else if (project.platform === "itch") {
@@ -107,9 +107,9 @@ document.querySelectorAll(".details-btn").forEach(btn => {
 
 closeBtn.addEventListener("click", () => {
     modal.style.display = "none";
-    modalVideo.src = ""; // Stop video
+    modalVideo.src = "";
     modalComingSoon.style.display = "none";
-    modalIcons.innerHTML = ""; // Clear icons
+    modalIcons.innerHTML = "";
 });
 
 window.addEventListener("click", (e) => {
@@ -117,6 +117,6 @@ window.addEventListener("click", (e) => {
         modal.style.display = "none";
         modalVideo.src = "";
         modalComingSoon.style.display = "none";
-        modalIcons.innerHTML = ""; // Clear icons
+        modalIcons.innerHTML = "";
     }
 });
