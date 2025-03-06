@@ -1,4 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
+    // Your GitHub Personal Access Token (replace with your actual token)
+    const GITHUB_TOKEN = "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"; // Replace this with your PAT
+
     // Project Data for Modal and Progress Sync
     const projects = {
         1: { video: "", desc: "A chill 3D platformer.", link: "https://ciarantdev.itch.io/cosmos-adventure-demo", progress: 10, github: "https://github.com/C1arant/Cosmos-Adventure" },
@@ -63,15 +66,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 projectModalComingSoon.style.display = "block";
             }
 
-            // Fetch Last Updated from GitHub
+            // Fetch Last Updated from GitHub with PAT
             lastUpdated.textContent = "Last Updated: Loading...";
             if (project.github) {
                 try {
                     const repoPath = project.github.replace("https://github.com/", "");
                     const response = await fetch(`https://api.github.com/repos/${repoPath}/commits`, {
                         headers: {
-                            // Optional: Add GitHub token if rate-limited (uncomment and replace with your token)
-                            // "Authorization": "token YOUR_PERSONAL_ACCESS_TOKEN"
+                            "Authorization": `Bearer ${GITHUB_TOKEN}`,
+                            "Accept": "application/vnd.github+json"
                         }
                     });
                     if (!response.ok) {
