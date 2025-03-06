@@ -1,5 +1,73 @@
+<<<<<<< HEAD
 document.addEventListener("DOMContentLoaded", () => {
     console.log("Script loaded"); // Debug log to confirm script runs
+=======
+const projects = {
+    1: { 
+        title: "Cosmo's Adventure", 
+        video: "", 
+        desc: "A chill 3D platformer.", 
+        link: "https://ciarantdev.itch.io/cosmos-adventure-demo",
+        platform: "itch" // Added platform indicator
+    },
+    2: { 
+        title: "Cyber League", 
+        video: "", 
+        desc: "Fast-paced tactical shooter.", 
+        link: "#",
+        platform: "steam" // No platform
+    },
+    3: { 
+        title: "Project Luna", 
+        video: "https://www.youtube.com/embed/qrkHyet6y5o", 
+        desc: "Sci-fi adventure on Steam.", 
+        link: "https://store.steampowered.com/app/1950760/Project_Luna/",
+        platform: "steam" // Added platform indicator
+    },
+    4: { 
+        title: "Robo Rob", 
+        video: "https://www.youtube.com/embed/fy6DlFiszWI", 
+        desc: "Rage-inducing puzzle platformer on Steam.", 
+        link: "https://store.steampowered.com/app/2291910/Robo_Rob/",
+        platform: "steam" // Added platform indicator
+    },
+    5: { 
+        title: "Silly Drifters", 
+        video: "https://www.youtube.com/embed/XK1AhpbhdwE", 
+        desc: "A physics-based driving game.", 
+        link: "https://ciarantdev.itch.io/sillydrifters",
+        platform: "itch" // Added platform indicator
+    },
+    6: { 
+        title: "Frontier Manager", 
+        video: "https://www.youtube.com/embed/adfmsK73c90", 
+        desc: "An idle space sim.", 
+        link: "https://ciarantdev.itch.io/satellite",
+        platform: "itch" // Added platform indicator
+    },
+    7: { 
+        title: "Wild Heart", 
+        video: "", 
+        desc: "A chill 3d adventure.", 
+        link: "#",
+        platform: "itch" // No platform
+    },
+    8: { 
+        title: "Starfarer", 
+        video: "", 
+        desc: "A scifi co-op adventure.", 
+        link: "#",
+        platform: "itch" // No platform
+    },
+    9: { 
+        title: "Super Jump", 
+        video: "", 
+        desc: "A fast-paced platformer.", 
+        link: "#",
+        platform: "itch" // No platform
+    }
+};
+>>>>>>> parent of 3c5337f (moved things again)
 
     // Project Data for Modal
     const projects = {
