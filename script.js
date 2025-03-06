@@ -42,16 +42,16 @@ const projects = {
         platform: "itch" // Added platform indicator
     },
     7: { 
-        title: "Pixel Dungeon", 
+        title: "Wild Heart", 
         video: "", 
-        desc: "A retro-style dungeon crawler.", 
+        desc: "A chill 3d adventure.", 
         link: "#",
         platform: "itch" // No platform
     },
     8: { 
-        title: "Space Invaders", 
+        title: "Starfarer", 
         video: "", 
-        desc: "A modern take on a classic.", 
+        desc: "A scifi co-op adventure.", 
         link: "#",
         platform: "itch" // No platform
     },
