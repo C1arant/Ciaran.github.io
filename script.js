@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     // Replace with your new PAT with 'repo' scope
-    const GITHUB_TOKEN = "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"; // Replace this with your new token
+    const GITHUB_TOKEN = "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"; // Replace this with your new token
 
     // Project Data for Modal and Progress Sync
     const projects = {
