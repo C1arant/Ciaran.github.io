@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
         6: { video: "https://www.youtube.com/embed/adfmsK73c90", desc: "An idle space sim.", link: "https://ciarantdev.itch.io/satellite", progress: 100 },
         7: { video: "", desc: "A chill 3D adventure.", link: "#", progress: 0 },
         8: { video: "", desc: "A scifi co-op adventure.", link: "#", progress: 0 },
-        9: { video: "", desc: "A fast-paced platformer.", link: "#", progress: 0 }
+        9: { video: "https://www.youtube.com/embed/7PZcmBfICuI", desc: "A fast-paced platformer.", link: "#", progress: 0 }
     };
 
     // Sync Progress Bars from projects Object
@@ -76,12 +76,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Badge Modal Logic
     const badges = {
-        1: { title: "Bronze Twitch", image: "images/bronze-twitch.png", desc: "Reached Bronze Tier on Twitch" },
-        2: { title: "Silver Twitch", image: "images/silver-twitch.png", desc: "Reached Silver Tier on Twitch" },
-        3: { title: "Gold Twitch", image: "images/gold-twitch.png", desc: "Reached Gold Tier on Twitch" },
-        4: { title: "Bronze YouTube", image: "images/bronze-youtube.png", desc: "Reached Bronze Tier on YouTube" },
-        5: { title: "Silver YouTube", image: "images/silver-youtube.png", desc: "Reached Silver Tier on YouTube" },
-        6: { title: "Gold YouTube", image: "images/gold-youtube.png", desc: "Reached Gold Tier on YouTube" },
+        1: { title: "Bronze Twitch", image: "images/bronze-twitch.png", desc: "Reached 200 followers" },
+        4: { title: "Bronze YouTube", image: "images/bronze-youtube.png", desc: "Reached 500 subscribers" },
+        5: { title: "Silver YouTube", image: "images/silver-youtube.png", desc: "Reached 1000" },
+        6: { title: "Gold YouTube", image: "images/gold-youtube.png", desc: "Reached 3000 subscribers" },
         7: { title: "Steam Upload", image: "images/steam-badge.png", desc: "Uploaded a Game to Steam" }
     };
 
