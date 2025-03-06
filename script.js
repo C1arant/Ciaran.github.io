@@ -3,13 +3,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const projects = {
         1: { video: "", desc: "A chill 3D platformer.", link: "https://ciarantdev.itch.io/cosmos-adventure-demo", progress: 100, github: "https://github.com/C1arant/Cosmos-Adventure" },
         2: { video: "", desc: "Fast-paced tactical shooter.", link: "#", progress: 60, github: "https://github.com/C1arant/Cyber-League" },
-        3: { video: "https://www.youtube.com/embed/qrkHyet6y5o", desc: "Sci-fi adventure on Steam.", link: "https://store.steampowered.com/app/1950760/Project_Luna/", progress: 100, github: "https://github.com/C1arant/Project-Luna" },
-        4: { video: "https://www.youtube.com/embed/fy6DlFiszWI", desc: "Rage-inducing puzzle platformer on Steam.", link: "https://store.steampowered.com/app/2291910/Robo_Rob/", progress: 100, github: "https://github.com/C1arant/Robo-Rob" },
+        3: { video: "https://www.youtube.com/embed/qrkHyet6y5o", desc: "Sci-fi adventure on Steam.", link: "https://store.steampowered.com/app/1950760/Project_Luna/", progress: 100, github: "https://github.com/C1arant/U.ProjectLuna" },
+        4: { video: "https://www.youtube.com/embed/fy6DlFiszWI", desc: "Rage-inducing puzzle platformer on Steam.", link: "https://store.steampowered.com/app/2291910/Robo_Rob/", progress: 100, github: "https://github.com/C1arant/RoboRob" },
         5: { video: "https://www.youtube.com/embed/XK1AhpbhdwE", desc: "A physics-based driving game.", link: "https://ciarantdev.itch.io/sillydrifters", progress: 100, github: "https://github.com/C1arant/Silly-Drifters" },
-        6: { video: "https://www.youtube.com/embed/adfmsK73c90", desc: "An idle space sim.", link: "https://ciarantdev.itch.io/satellite", progress: 100, github: "https://github.com/C1arant/Frontier-Manager" },
+        6: { video: "https://www.youtube.com/embed/adfmsK73c90", desc: "An idle space sim.", link: "https://ciarantdev.itch.io/satellite", progress: 100, github: "https://github.com/C1arant/U.FrontiereManager" },
         7: { video: "", desc: "A chill 3D adventure.", link: "#", progress: 30, github: "https://github.com/C1arant/Wild-Heart" },
-        8: { video: "", desc: "A scifi co-op adventure.", link: "#", progress: 70, github: "https://github.com/C1arant/Star-Farer" },
-        9: { video: "", desc: "A fast-paced platformer.", link: "#", progress: 50, github: "https://github.com/C1arant/Carbon" }
+        8: { video: "", desc: "A scifi co-op adventure.", link: "#", progress: 70, github: "https://github.com/C1arant/SpaceRPG" },
+        9: { video: "", desc: "A fast-paced platformer.", link: "#", progress: 50, github: "https://github.com/C1arant/FPS" }
     };
 
     // Sync Progress Bars from projects Object
