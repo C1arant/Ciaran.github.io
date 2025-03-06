@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     // Your GitHub Personal Access Token
-    const GITHUB_TOKEN = "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";
+    const GITHUB_TOKEN = "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";
 
     // Project Data for Modal and Progress Sync
     const projects = {
