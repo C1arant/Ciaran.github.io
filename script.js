@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
+    console.log("Script loaded"); // Debug log to confirm script runs
+
     // Project Data for Modal
     const projects = {
         1: { video: "", desc: "A chill 3D platformer.", link: "https://ciarantdev.itch.io/cosmos-adventure-demo" },
@@ -24,7 +26,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.querySelectorAll(".details-btn").forEach(btn => {
         btn.addEventListener("click", (e) => {
-            e.preventDefault();
+            e.preventDefault(); // Prevent default link behavior
+            console.log("Details button clicked"); // Debug log
             const projectId = btn.parentElement.getAttribute("data-id");
             const project = projects[projectId];
             
@@ -84,6 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.querySelectorAll("#badges li").forEach(badge => {
         badge.addEventListener("click", () => {
+            console.log("Badge clicked"); // Debug log
             const badgeId = badge.getAttribute("data-id");
             const badgeData = badges[badgeId];
 
