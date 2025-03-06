@@ -56,7 +56,7 @@ const projects = {
         platform: "itch" // No platform
     },
     9: { 
-        title: "Super Jump", 
+        title: "Carbon", 
         video: "", 
         desc: "A fast-paced platformer.", 
         link: "#",

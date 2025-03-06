@@ -91,10 +91,18 @@
         .details-btn:hover {
             background: #0096c7;
         }
-        /* Tools and Skills Sections */
-        #tools, #skills {
-            max-width: 800px;
+        /* Tools and Skills Container */
+        #tools-skills-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            max-width: 1200px;
             margin: 20px auto;
+            padding: 0 20px;
+        }
+        #tools, #skills {
+            flex: 1; /* Equal width for both */
+            max-width: 500px; /* Limit width of each */
             padding: 20px;
             background: #2c2c2c;
             border-radius: 10px;
@@ -197,6 +205,16 @@
         footer a:hover {
             color: #0096c7;
         }
+        /* Responsive Design */
+        @media (max-width: 800px) {
+            #tools-skills-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            #tools, #skills {
+                max-width: 800px; /* Full width on small screens */
+            }
+        }
     </style>
 </head>
 <body>
@@ -209,44 +227,45 @@
     <!-- About Me Section -->
     <section id="about">
         <h2>About Me</h2>
-        <p>Hi, I’m CiaranThistle, a game development & Video Production Student
-        with a knack for creating diverse and engaging experiences. In the future I want to focus more on game design.
-        my dream job would be to work on games like Star Citizen</p>
+        <p>Hi, I’m CiaranThistle, a game development & Video Production Student with a knack for creating diverse and engaging experiences. In the future I want to focus more on game design. My dream job would be to work on games like Star Citizen</p>
     </section>
 
-     <!-- Tools Section -->
-     <section id="tools">
-        <h2>Tools</h2>
-        <ul>
-            <li><i class="fa-brands fa-unity"></i> Unity</li>
-            <li><i class="fa-brands fa-github"></i> GitHub</li>
-            <li><i class="fa-brands fa-unreal"></i> Unreal Engine</li>
-            <li><i class="fa-solid fa-cube"></i> Blender</li>
-            <li><i class="fa-brands fa-js"></i> JavaScript</li>
-            <li><i class="fa-brands fa-docker"></i> Docker</li>
-            <li><i class="fa-brands fa-html5"></i> HTML/CSS</li>
-            <li><i class="fa-brands fa-python"></i> Python</li>
-            <li><i class="fa-brands fa-java"></i> Java</li>
-            <li><i class="fa-brands fa-atlassian"></i> Jira</li>
-            <li><i class="fa-brands fa-steam"></i> Steam</li>
-            <li><i class="fa-brands fa-raspberry-pi"></i> Raspberry Pi</li>
-            <li><i class="fa-brands fa-git"></i> Git</li>
-        </ul>
-    </section>
+    <!-- Tools and Skills Container -->
+    <div id="tools-skills-container">
+        <!-- Tools Section -->
+        <section id="tools">
+            <h2>Tools</h2>
+            <ul>
+                <li><i class="fa-brands fa-unity"></i> Unity</li>
+                <li><i class="fa-brands fa-github"></i> GitHub</li>
+                <li><i class="fa-brands fa-unreal"></i> Unreal Engine</li>
+                <li><i class="fa-solid fa-cube"></i> Blender</li>
+                <li><i class="fa-brands fa-js"></i> JavaScript</li>
+                <li><i class="fa-brands fa-docker"></i> Docker</li>
+                <li><i class="fa-brands fa-html5"></i> HTML/CSS</li>
+                <li><i class="fa-brands fa-python"></i> Python</li>
+                <li><i class="fa-brands fa-java"></i> Java</li>
+                <li><i class="fa-brands fa-atlassian"></i> Jira</li>
+                <li><i class="fa-brands fa-steam"></i> Steam</li>
+                <li><i class="fa-brands fa-raspberry-pi"></i> Raspberry Pi</li>
+                <li><i class="fa-brands fa-git"></i> Git</li>
+            </ul>
+        </section>
 
-    <!-- Skills Section -->
-    <section id="skills">
-        <h2>Skills</h2>
-        <ul>
-            <li>Project Management</li>
-            <li>Video Editing</li>
-            <li>Live Production</li>
-            <li>Game Design</li>
-            <li>Level Design</li>
-            <li>3D Modeling</li>
-            <li>C# Programming</li>
-        </ul>
-    </section>
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>Project Management</li>
+                <li>Video Editing</li>
+                <li>Live Production</li>
+                <li>Game Design</li>
+                <li>Level Design</li>
+                <li>3D Modeling</li>
+                <li>C# Programming</li>
+            </ul>
+        </section>
+    </div>
 
     <!-- Projects Section -->
     <section id="projects">
@@ -297,7 +316,7 @@
             <div class="project" data-id="7">
                 <h3>Wild Heart</h3>
                 <i class="fa-brands fa-itch-io itch-icon"></i>
-                <img src="images/Comming soon Card.jpg" alt="Game 1 Screenshot">
+                <img src="images/Comming soon Card.jpg" alt="Game 7 Screenshot">
                 <p>A chill 3d adventure.</p>
                 <a href="#" class="details-btn">Details</a>
             </div>
@@ -309,7 +328,7 @@
                 <a href="#" class="details-btn">Details</a>
             </div>
             <div class="project" data-id="9">
-                <h3>Super Jump</h3>
+                <h3>Carbon</h3>
                 <i class="fa-brands fa-itch-io itch-icon"></i>
                 <img src="images/Comming soon Card.jpg" alt="Game 9 Screenshot">
                 <p>A fast-paced platformer.</p>
