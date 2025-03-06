@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Your GitHub Personal Access Token
-    const GITHUB_TOKEN = "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";
+    // Replace with your new PAT with 'repo' scope
+    const GITHUB_TOKEN = "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"; // Replace this with your new token
 
     // Project Data for Modal and Progress Sync
     const projects = {
