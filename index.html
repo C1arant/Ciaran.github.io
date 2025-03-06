@@ -89,7 +89,7 @@
         .details-btn:hover {
             background: #0096c7;
         }
-        #tools-skills-container {
+        #tools-skills-badges-container {
             display: flex;
             justify-content: center;
             gap: 20px;
@@ -97,15 +97,15 @@
             margin: 20px auto;
             padding: 0 20px;
         }
-        #tools, #skills {
+        #tools, #skills, #badges {
             flex: 1;
-            max-width: 500px;
+            max-width: 350px; /* Adjusted to fit 3 sections */
             padding: 20px;
             background: #2c2c2c;
             border-radius: 10px;
             text-align: center;
         }
-        #tools ul, #skills ul {
+        #tools ul, #skills ul, #badges ul {
             list-style: none;
             padding: 0;
             display: flex;
@@ -125,6 +125,17 @@
         #tools i, #skills i {
             font-size: 1.2em;
         }
+        #badges li {
+            cursor: pointer;
+        }
+        .badge {
+            width: 64px;
+            height: 64px;
+            transition: transform 0.3s ease;
+        }
+        .badge:hover {
+            transform: scale(1.1);
+        }
         .modal {
             display: none;
             position: fixed;
@@ -133,6 +144,7 @@
             width: 100%;
             height: 100%;
             background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
         }
         .modal-content {
             background: #2c2c2c;
@@ -188,6 +200,11 @@
             font-size: 1.5em;
             color: #00b4d8;
         }
+        #badge-modal-image {
+            max-width: 256px; /* Half of 512x512 for modal */
+            height: auto;
+            margin: 15px auto;
+        }
         .progress-bar {
             width: 100%;
             height: 10px;
@@ -200,24 +217,6 @@
             height: 100%;
             background: #00b4d8;
             border-radius: 5px;
-        }
-        /* Badge Column */
-        #badge-column {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            z-index: 1000; /* Ensure it stays above other content */
-        }
-        .badge {
-            width: 64px;
-            height: 64px;
-            transition: transform 0.3s ease;
-        }
-        .badge:hover {
-            transform: scale(1.1); /* Slight grow on hover */
         }
         footer {
             text-align: center;
@@ -232,16 +231,13 @@
         footer a:hover {
             color: #0096c7;
         }
-        @media (max-width: 800px) {
-            #tools-skills-container {
+        @media (max-width: 1000px) {
+            #tools-skills-badges-container {
                 flex-direction: column;
                 align-items: center;
             }
-            #tools, #skills {
+            #tools, #skills, #badges {
                 max-width: 800px;
-            }
-            #badge-column {
-                display: none; /* Hide badges on small screens */
             }
         }
     </style>
@@ -253,25 +249,14 @@
         <p>Game Developer | Crafting Worlds & Challenges</p>
     </header>
 
-    <!-- Badge Column -->
-    <div id="badge-column">
-        <img src="images/Copper Twitch badge.png" alt="Bronze Twitch Badge" title="Bronze Tier Twitch" class="badge">
-        <img src="images/Silver Twitch badge.png" alt="Silver Twitch Badge" title="Silver Tier Twitch" class="badge">
-        <img src="images/Gold Twitch badge.png" alt="Gold Twitch Badge" title="Gold Tier Twitch" class="badge">
-        <img src="images/Copper YT badge.png" alt="Bronze YouTube Badge" title="Bronze Tier YouTube" class="badge">
-        <img src="images/Copper YT badge.png" alt="Silver YouTube Badge" title="Silver Tier YouTube" class="badge">
-        <img src="images/Gold YT badge.png" alt="Gold YouTube Badge" title="Gold Tier YouTube" class="badge">
-        <img src="images/Steam Badge.png" alt="Steam Upload Badge" title="Uploaded a Game to Steam" class="badge">
-    </div>
-
     <!-- About Me Section -->
     <section id="about">
         <h2>About Me</h2>
         <p>Hi, I’m CiaranThistle, a game development & Video Production Student with a knack for creating diverse and engaging experiences. In the future I want to focus more on game design. My dream job would be to work on games like Star Citizen</p>
     </section>
 
-    <!-- Tools and Skills Container -->
-    <div id="tools-skills-container">
+    <!-- Tools, Skills, and Badges Container -->
+    <div id="tools-skills-badges-container">
         <!-- Tools Section -->
         <section id="tools">
             <h2>Tools</h2>
@@ -303,6 +288,20 @@
                 <li>Level Design</li>
                 <li>3D Modeling</li>
                 <li>C# Programming</li>
+            </ul>
+        </section>
+
+        <!-- Badges Section -->
+        <section id="badges">
+            <h2>Badges</h2>
+            <ul>
+                <li data-id="1"><img src="images/bronze-twitch.png" alt="Bronze Twitch Badge" class="badge"></li>
+                <li data-id="2"><img src="images/silver-twitch.png" alt="Silver Twitch Badge" class="badge"></li>
+                <li data-id="3"><img src="images/gold-twitch.png" alt="Gold Twitch Badge" class="badge"></li>
+                <li data-id="4"><img src="images/bronze-youtube.png" alt="Bronze YouTube Badge" class="badge"></li>
+                <li data-id="5"><img src="images/silver-youtube.png" alt="Silver YouTube Badge" class="badge"></li>
+                <li data-id="6"><img src="images/gold-youtube.png" alt="Gold YouTube Badge" class="badge"></li>
+                <li data-id="7"><img src="images/steam-badge.png" alt="Steam Upload Badge" class="badge"></li>
             </ul>
         </section>
     </div>
@@ -386,7 +385,7 @@
         </div>
     </section>
 
-    <!-- Modal -->
+    <!-- Project Modal -->
     <div id="modal" class="modal">
         <div class="modal-content">
             <span class="close">×</span>
@@ -396,6 +395,16 @@
             <p id="modal-coming-soon">COMING SOON</p>
             <p id="modal-desc"></p>
             <a href="#" class="play-btn" id="modal-link"><i class="fa-solid fa-download"></i> Play</a>
+        </div>
+    </div>
+
+    <!-- Badge Modal -->
+    <div id="badge-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">×</span>
+            <h3 id="badge-modal-title"></h3>
+            <img id="badge-modal-image" src="" alt="Badge Image">
+            <p id="badge-modal-desc"></p>
         </div>
     </div>
 

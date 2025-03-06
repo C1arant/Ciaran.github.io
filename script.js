@@ -1,3 +1,4 @@
+// Project Modal Logic
 const projects = {
     1: { 
         title: "Cosmo's Adventure", 
@@ -57,21 +58,21 @@ const projects = {
     },
     9: { 
         title: "Carbon", 
-        video: "https://www.youtube.com/embed/7PZcmBfICuI", 
+        video: "", 
         desc: "A fast-paced platformer.", 
         link: "#",
         platform: "itch"
     }
 };
 
-const modal = document.getElementById("modal");
-const modalTitle = document.getElementById("modal-title");
-const modalVideo = document.getElementById("modal-video");
-const modalComingSoon = document.getElementById("modal-coming-soon");
-const modalDesc = document.getElementById("modal-desc");
-const modalLink = document.getElementById("modal-link");
-const modalIcons = document.getElementById("modal-icons");
-const closeBtn = document.querySelector(".close");
+const projectModal = document.getElementById("modal");
+const projectModalTitle = document.getElementById("modal-title");
+const projectModalVideo = document.getElementById("modal-video");
+const projectModalComingSoon = document.getElementById("modal-coming-soon");
+const projectModalDesc = document.getElementById("modal-desc");
+const projectModalLink = document.getElementById("modal-link");
+const projectModalIcons = document.getElementById("modal-icons");
+const projectCloseBtn = document.querySelector("#modal .close");
 
 document.querySelectorAll(".details-btn").forEach(btn => {
     btn.addEventListener("click", (e) => {
@@ -79,44 +80,83 @@ document.querySelectorAll(".details-btn").forEach(btn => {
         const projectId = btn.parentElement.getAttribute("data-id");
         const project = projects[projectId];
         
-        modalTitle.textContent = project.title;
-        modalDesc.textContent = project.desc;
-        modalLink.href = project.link;
+        projectModalTitle.textContent = project.title;
+        projectModalDesc.textContent = project.desc;
+        projectModalLink.href = project.link;
 
-        // Handle platform icons
-        modalIcons.innerHTML = "";
+        projectModalIcons.innerHTML = "";
         if (project.platform === "steam") {
-            modalIcons.innerHTML = '<i class="fab fa-steam"></i>';
+            projectModalIcons.innerHTML = '<i class="fab fa-steam"></i>';
         } else if (project.platform === "itch") {
-            modalIcons.innerHTML = '<i class="fa-brands fa-itch-io"></i>';
+            projectModalIcons.innerHTML = '<i class="fa-brands fa-itch-io"></i>';
         }
 
         if (project.video) {
-            modalVideo.src = project.video;
-            modalVideo.style.display = "block";
-            modalComingSoon.style.display = "none";
+            projectModalVideo.src = project.video;
+            projectModalVideo.style.display = "block";
+            projectModalComingSoon.style.display = "none";
         } else {
-            modalVideo.src = "";
-            modalVideo.style.display = "none";
-            modalComingSoon.style.display = "block";
+            projectModalVideo.src = "";
+            projectModalVideo.style.display = "none";
+            projectModalComingSoon.style.display = "block";
         }
 
-        modal.style.display = "block";
+        projectModal.style.display = "block";
     });
 });
 
-closeBtn.addEventListener("click", () => {
-    modal.style.display = "none";
-    modalVideo.src = "";
-    modalComingSoon.style.display = "none";
-    modalIcons.innerHTML = "";
+projectCloseBtn.addEventListener("click", () => {
+    projectModal.style.display = "none";
+    projectModalVideo.src = "";
+    projectModalComingSoon.style.display = "none";
+    projectModalIcons.innerHTML = "";
 });
 
 window.addEventListener("click", (e) => {
-    if (e.target === modal) {
-        modal.style.display = "none";
-        modalVideo.src = "";
-        modalComingSoon.style.display = "none";
-        modalIcons.innerHTML = "";
+    if (e.target === projectModal) {
+        projectModal.style.display = "none";
+        projectModalVideo.src = "";
+        projectModalComingSoon.style.display = "none";
+        projectModalIcons.innerHTML = "";
+    }
+});
+
+// Badge Modal Logic
+const badges = {
+    1: { title: "Bronze Twitch", image: "images/bronze-twitch.png", desc: "Reached Bronze Tier on Twitch" },
+    2: { title: "Silver Twitch", image: "images/silver-twitch.png", desc: "Reached Silver Tier on Twitch" },
+    3: { title: "Gold Twitch", image: "images/gold-twitch.png", desc: "Reached Gold Tier on Twitch" },
+    4: { title: "Bronze YouTube", image: "images/bronze-youtube.png", desc: "Reached Bronze Tier on YouTube" },
+    5: { title: "Silver YouTube", image: "images/silver-youtube.png", desc: "Reached Silver Tier on YouTube" },
+    6: { title: "Gold YouTube", image: "images/gold-youtube.png", desc: "Reached Gold Tier on YouTube" },
+    7: { title: "Steam Upload", image: "images/steam-badge.png", desc: "Uploaded a Game to Steam" }
+};
+
+const badgeModal = document.getElementById("badge-modal");
+const badgeModalTitle = document.getElementById("badge-modal-title");
+const badgeModalImage = document.getElementById("badge-modal-image");
+const badgeModalDesc = document.getElementById("badge-modal-desc");
+const badgeCloseBtn = document.querySelector("#badge-modal .close");
+
+document.querySelectorAll("#badges li").forEach(badge => {
+    badge.addEventListener("click", () => {
+        const badgeId = badge.getAttribute("data-id");
+        const badgeData = badges[badgeId];
+
+        badgeModalTitle.textContent = badgeData.title;
+        badgeModalImage.src = badgeData.image;
+        badgeModalDesc.textContent = badgeData.desc;
+
+        badgeModal.style.display = "block";
+    });
+});
+
+badgeCloseBtn.addEventListener("click", () => {
+    badgeModal.style.display = "none";
+});
+
+window.addEventListener("click", (e) => {
+    if (e.target === badgeModal) {
+        badgeModal.style.display = "none";
     }
 });
