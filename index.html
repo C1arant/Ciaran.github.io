@@ -4,52 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CiaranThistle | Game Dev Portfolio</title>
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="images/Logo.png">
+    <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-<<<<<<< HEAD
-        html, body { margin: 0; padding: 0; background: #1a1a1a; color: #e0e0e0; font-family: Arial, sans-serif; scroll-behavior: smooth; }
-        nav { position: fixed; top: 0; width: 100%; background: #2c2c2c; padding: 10px 0; border-bottom: 2px solid #444; z-index: 1000; }
-        nav ul { list-style: none; margin: 0; padding: 0; display: flex; justify-content: center; gap: 30px; }
-        nav a { color: #00b4d8; text-decoration: none; font-size: 1.1em; transition: color 0.3s ease; }
-        nav a:hover { color: #0096c7; }
-        header { text-align: center; padding: 80px 20px 20px; background: #2c2c2c; border-bottom: 2px solid #444; }
-        #logo { max-width: 150px; height: auto; margin-bottom: 10px; }
-        h1, h2, h3 { text-align: center; color: #ffffff; }
-        p { color: #cccccc; }
-        #about { max-width: 800px; margin: 20px auto; padding: 20px; background: #2c2c2c; border-radius: 10px; text-align: center; }
-        .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; max-width: 1200px; margin: 20px auto; padding: 0 20px; }
-        .project { background: #2c2c2c; padding: 20px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4); border: 2px solid #00b4d8; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease; position: relative; }
-        .project:hover { transform: translateY(-10px) rotate(2deg); box-shadow: 0 10px 20px rgba(0, 180, 216, 0.5); }
-        .project img { max-width: 100%; height: auto; border-radius: 8px; margin-bottom: 15px; }
-        .project .steam-icon, .project .itch-icon { position: absolute; top: 10px; right: 10px; font-size: 1.5em; color: #00b4d8; }
-        .details-btn { display: inline-block; padding: 10px 20px; background: #00b4d8; color: #fff; text-decoration: none; border-radius: 5px; margin-top: 15px; }
-        .details-btn:hover { background: #0096c7; }
-        #tools-skills-badges-container { display: flex; justify-content: center; gap: 20px; max-width: 1200px; margin: 20px auto; padding: 0 20px; }
-        #tools, #skills, #badges { flex: 1; max-width: 350px; padding: 20px; background: #2c2c2c; border-radius: 10px; text-align: center; }
-        #tools ul, #skills ul, #badges ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
-        #tools li, #skills li { background: #00b4d8; color: #fff; padding: 8px 15px; border-radius: 5px; display: flex; align-items: center; gap: 8px; }
-        #tools i, #skills i { font-size: 1.2em; }
-        #badges li { cursor: pointer; }
-        .badge { width: 64px; height: 64px; transition: transform 0.3s ease; }
-        .badge:hover { transform: scale(1.1); }
-        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.9); z-index: 1000; }
-        .modal-content { background: #2c2c2c; margin: 10% auto; padding: 20px; width: 80%; max-width: 600px; border-radius: 8px; color: #e0e0e0; text-align: center; position: relative; }
-        .close { float: right; font-size: 28px; color: #fff; cursor: pointer; }
-        .close:hover { color: #ff5555; }
-        .play-btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; background: #00b4d8; color: #fff; border: none; border-radius: 5px; cursor: pointer; text-decoration: none; margin-top: 15px; font-size: 1em; }
-        .play-btn:hover { background: #0096c7; }
-        #modal-video { display: block; margin: 15px auto; }
-        #modal-coming-soon { display: none; font-size: 1.5em; color: #00b4d8; margin: 15px auto; }
-        #modal-icons { position: absolute; top: 10px; left: 10px; font-size: 1.5em; color: #00b4d8; }
-        #badge-modal-image { max-width: 256px; height: auto; margin: 15px auto; }
-        footer { text-align: center; padding: 20px; background: #2c2c2c; margin-top: 20px; }
-        footer a { color: #00b4d8; text-decoration: none; }
-        footer a:hover { color: #0096c7; }
-        @media (max-width: 1000px) {
-            #tools-skills-badges-container { flex-direction: column; align-items: center; }
-            #tools, #skills, #badges { max-width: 800px; }
-=======
         html, body {
             margin: 0;
             padding: 0;
@@ -64,7 +23,7 @@
             border-bottom: 2px solid #444;
         }
         #logo {
-            max-width: 150px; /* Adjust size as needed */
+            max-width: 150px;
             height: auto;
             margin-bottom: 10px;
         }
@@ -75,7 +34,6 @@
         p {
             color: #cccccc;
         }
-        /* About Me Section */
         #about {
             max-width: 800px;
             margin: 20px auto;
@@ -84,7 +42,6 @@
             border-radius: 10px;
             text-align: center;
         }
-        /* Projects Section */
         .project-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -132,16 +89,23 @@
         .details-btn:hover {
             background: #0096c7;
         }
-        /* Tools and Skills Sections */
-        #tools, #skills {
-            max-width: 800px;
+        #tools-skills-badges-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            max-width: 1200px;
             margin: 20px auto;
+            padding: 0 20px;
+        }
+        #tools, #skills, #badges {
+            flex: 1;
+            max-width: 350px; /* Adjusted to fit 3 sections */
             padding: 20px;
             background: #2c2c2c;
             border-radius: 10px;
             text-align: center;
         }
-        #tools ul, #skills ul {
+        #tools ul, #skills ul, #badges ul {
             list-style: none;
             padding: 0;
             display: flex;
@@ -161,7 +125,17 @@
         #tools i, #skills i {
             font-size: 1.2em;
         }
-        /* Modal */
+        #badges li {
+            cursor: pointer;
+        }
+        .badge {
+            width: 64px;
+            height: 64px;
+            transition: transform 0.3s ease;
+        }
+        .badge:hover {
+            transform: scale(1.1);
+        }
         .modal {
             display: none;
             position: fixed;
@@ -170,6 +144,7 @@
             width: 100%;
             height: 100%;
             background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
         }
         .modal-content {
             background: #2c2c2c;
@@ -225,6 +200,24 @@
             font-size: 1.5em;
             color: #00b4d8;
         }
+        #badge-modal-image {
+            max-width: 256px; /* Half of 512x512 for modal */
+            height: auto;
+            margin: 15px auto;
+        }
+        .progress-bar {
+            width: 100%;
+            height: 10px;
+            background: #444;
+            border-radius: 5px;
+            margin-top: 10px;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            background: #00b4d8;
+            border-radius: 5px;
+        }
         footer {
             text-align: center;
             padding: 20px;
@@ -237,35 +230,34 @@
         }
         footer a:hover {
             color: #0096c7;
->>>>>>> parent of 3c5337f (moved things again)
+        }
+        @media (max-width: 1000px) {
+            #tools-skills-badges-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            #tools, #skills, #badges {
+                max-width: 800px;
+            }
         }
     </style>
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#tools-skills-badges-container">Tools & Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#footer">Contact</a></li>
-        </ul>
-    </nav>
-
     <header>
         <img src="images/Logo.png" alt="CiaranThistle Logo" id="logo">
         <h1>CiaranThistle</h1>
         <p>Game Developer | Crafting Worlds & Challenges</p>
     </header>
 
+    <!-- About Me Section -->
     <section id="about">
         <h2>About Me</h2>
-        <p>Hi, I’m CiaranThistle, a game development & Video Production Student
-        with a knack for creating diverse and engaging experiences. In the future I want to focus more on game design.
-        my dream job would be to work on games like Star Citizen</p>
+        <p>Hi, I’m CiaranThistle, a game development & Video Production Student with a knack for creating diverse and engaging experiences. In the future I want to focus more on game design. My dream job would be to work on games like Star Citizen</p>
     </section>
 
-<<<<<<< HEAD
+    <!-- Tools, Skills, and Badges Container -->
     <div id="tools-skills-badges-container">
+        <!-- Tools Section -->
         <section id="tools">
             <h2>Tools</h2>
             <ul>
@@ -285,6 +277,7 @@
             </ul>
         </section>
 
+        <!-- Skills Section -->
         <section id="skills">
             <h2>Skills</h2>
             <ul>
@@ -295,63 +288,25 @@
                 <li>Level Design</li>
                 <li>3D Modeling</li>
                 <li>C# Programming</li>
-                <li>Problem Solving</li>
-                <li>Teamwork</li>
-                <li>Communication</li>
-                <li>Time Management</li>
-                <li>Adaptability</li>
-                <li>Photography</li>
-                <li>Videography</li>
             </ul>
         </section>
 
+        <!-- Badges Section -->
         <section id="badges">
             <h2>Badges</h2>
             <ul>
-                <li data-id="1"><img src="images/bronze-twitch.png" alt="Reached 200 followers" class="badge"></li>
-                <li data-id="4"><img src="images/bronze-youtube.png" alt="Reached 500 subscribers" class="badge"></li>
-                <li data-id="5"><img src="images/silver-youtube.png" alt="Reached 1000 subscribers" class="badge"></li>
-                <li data-id="6"><img src="images/gold-youtube.png" alt="Reached 3000 subscribers" class="badge"></li>
-                <li data-id="7"><img src="images/steam-badge.png" alt="Uploaded a Game to Steam" class="badge"></li>
+                <li data-id="1"><img src="images/bronze-twitch.png" alt="Bronze Twitch Badge" class="badge"></li>
+                <li data-id="2"><img src="images/silver-twitch.png" alt="Silver Twitch Badge" class="badge"></li>
+                <li data-id="3"><img src="images/gold-twitch.png" alt="Gold Twitch Badge" class="badge"></li>
+                <li data-id="4"><img src="images/bronze-youtube.png" alt="Bronze YouTube Badge" class="badge"></li>
+                <li data-id="5"><img src="images/silver-youtube.png" alt="Silver YouTube Badge" class="badge"></li>
+                <li data-id="6"><img src="images/gold-youtube.png" alt="Gold YouTube Badge" class="badge"></li>
+                <li data-id="7"><img src="images/steam-badge.png" alt="Steam Upload Badge" class="badge"></li>
             </ul>
         </section>
     </div>
-=======
-     <!-- Tools Section -->
-     <section id="tools">
-        <h2>Tools</h2>
-        <ul>
-            <li><i class="fa-brands fa-unity"></i> Unity</li>
-            <li><i class="fa-brands fa-github"></i> GitHub</li>
-            <li><i class="fa-brands fa-unreal"></i> Unreal Engine</li>
-            <li><i class="fa-solid fa-cube"></i> Blender</li>
-            <li><i class="fa-brands fa-js"></i> JavaScript</li>
-            <li><i class="fa-brands fa-docker"></i> Docker</li>
-            <li><i class="fa-brands fa-html5"></i> HTML/CSS</li>
-            <li><i class="fa-brands fa-python"></i> Python</li>
-            <li><i class="fa-brands fa-java"></i> Java</li>
-            <li><i class="fa-brands fa-atlassian"></i> Jira</li>
-            <li><i class="fa-brands fa-steam"></i> Steam</li>
-            <li><i class="fa-brands fa-raspberry-pi"></i> Raspberry Pi</li>
-            <li><i class="fa-brands fa-git"></i> Git</li>
-        </ul>
-    </section>
 
-    <!-- Skills Section -->
-    <section id="skills">
-        <h2>Skills</h2>
-        <ul>
-            <li>Project Management</li>
-            <li>Video Editing</li>
-            <li>Live Production</li>
-            <li>Game Design</li>
-            <li>Level Design</li>
-            <li>3D Modeling</li>
-            <li>C# Programming</li>
-        </ul>
-    </section>
->>>>>>> parent of 3c5337f (moved things again)
-
+    <!-- Projects Section -->
     <section id="projects">
         <h2>My Projects</h2>
         <div class="project-grid">
@@ -360,6 +315,7 @@
                 <i class="fa-brands fa-itch-io itch-icon"></i>
                 <img src="images/game1.jpg" alt="Game 1 Screenshot">
                 <p>A chill 3D platformer.</p>
+                <div class="progress-bar"><div class="progress-fill" style="width: 100%;"></div></div>
                 <a href="#" class="details-btn">Details</a>
             </div>
             <div class="project" data-id="2">
@@ -367,6 +323,7 @@
                 <i class="fab fa-steam steam-icon"></i>
                 <img src="images/game2.jpg" alt="Game 2 Screenshot">
                 <p>Fast-paced tactical shooter.</p>
+                <div class="progress-bar"><div class="progress-fill" style="width: 60%;"></div></div>
                 <a href="#" class="details-btn">Details</a>
             </div>
             <div class="project" data-id="3">
@@ -374,6 +331,7 @@
                 <i class="fab fa-steam steam-icon"></i>
                 <img src="images/game3.jpg" alt="Game 3 Screenshot">
                 <p>Sci-fi adventure.</p>
+                <div class="progress-bar"><div class="progress-fill" style="width: 100%;"></div></div>
                 <a href="#" class="details-btn">Details</a>
             </div>
             <div class="project" data-id="4">
@@ -381,6 +339,7 @@
                 <i class="fab fa-steam steam-icon"></i>
                 <img src="images/game4.jpg" alt="Game 4 Screenshot">
                 <p>Rage-inducing puzzle platformer.</p>
+                <div class="progress-bar"><div class="progress-fill" style="width: 100%;"></div></div>
                 <a href="#" class="details-btn">Details</a>
             </div>
             <div class="project" data-id="5">
@@ -388,6 +347,7 @@
                 <i class="fa-brands fa-itch-io itch-icon"></i>
                 <img src="images/game5.jpg" alt="Game 5 Screenshot">
                 <p>A physics-based driving game.</p>
+                <div class="progress-bar"><div class="progress-fill" style="width: 100%;"></div></div>
                 <a href="#" class="details-btn">Details</a>
             </div>
             <div class="project" data-id="6">
@@ -395,18 +355,15 @@
                 <i class="fa-brands fa-itch-io itch-icon"></i>
                 <img src="images/game6.jpg" alt="Game 6 Screenshot">
                 <p>An idle space sim.</p>
+                <div class="progress-bar"><div class="progress-fill" style="width: 100%;"></div></div>
                 <a href="#" class="details-btn">Details</a>
             </div>
             <div class="project" data-id="7">
                 <h3>Wild Heart</h3>
                 <i class="fa-brands fa-itch-io itch-icon"></i>
-<<<<<<< HEAD
                 <img src="images/Comming soon Card.jpg" alt="Game 7 Screenshot">
                 <p>A chill 3D adventure.</p>
-=======
-                <img src="images/Comming soon Card.jpg" alt="Game 1 Screenshot">
-                <p>A chill 3d adventure.</p>
->>>>>>> parent of 3c5337f (moved things again)
+                <div class="progress-bar"><div class="progress-fill" style="width: 30%;"></div></div>
                 <a href="#" class="details-btn">Details</a>
             </div>
             <div class="project" data-id="8">
@@ -414,18 +371,21 @@
                 <i class="fa-brands fa-itch-io itch-icon"></i>
                 <img src="images/Comming soon Card.jpg" alt="Game 8 Screenshot">
                 <p>A scifi co-op adventure.</p>
+                <div class="progress-bar"><div class="progress-fill" style="width: 70%;"></div></div>
                 <a href="#" class="details-btn">Details</a>
             </div>
             <div class="project" data-id="9">
-                <h3>Super Jump</h3>
+                <h3>Carbon</h3>
                 <i class="fa-brands fa-itch-io itch-icon"></i>
                 <img src="images/Comming soon Card.jpg" alt="Game 9 Screenshot">
                 <p>A fast-paced platformer.</p>
+                <div class="progress-bar"><div class="progress-fill" style="width: 50%;"></div></div>
                 <a href="#" class="details-btn">Details</a>
             </div>
         </div>
     </section>
 
+    <!-- Project Modal -->
     <div id="modal" class="modal">
         <div class="modal-content">
             <span class="close">×</span>
@@ -438,6 +398,7 @@
         </div>
     </div>
 
+    <!-- Badge Modal -->
     <div id="badge-modal" class="modal">
         <div class="modal-content">
             <span class="close">×</span>
@@ -447,7 +408,7 @@
         </div>
     </div>
 
-    <footer id="footer">
+    <footer>
         <p>Contact: ciaran.thistle@gmail.com | 
            <a href="https://github.com/C1arant"><i class="fa-brands fa-github"></i> GitHub</a> | 
            <a href="https://discord.gg/djEUKBUjG2"><i class="fa-brands fa-discord"></i> Discord</a> | 
@@ -455,6 +416,6 @@
            <a href="https://www.youtube.com/@CiarantDev"><i class="fa-brands fa-youtube"></i> YouTube</a>
         </p>
     </footer>
-    <script src="/script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

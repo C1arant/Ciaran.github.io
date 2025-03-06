@@ -1,86 +1,28 @@
-<<<<<<< HEAD
 document.addEventListener("DOMContentLoaded", () => {
     console.log("Script loaded"); // Debug log to confirm script runs
-=======
-const projects = {
-    1: { 
-        title: "Cosmo's Adventure", 
-        video: "", 
-        desc: "A chill 3D platformer.", 
-        link: "https://ciarantdev.itch.io/cosmos-adventure-demo",
-        platform: "itch" // Added platform indicator
-    },
-    2: { 
-        title: "Cyber League", 
-        video: "", 
-        desc: "Fast-paced tactical shooter.", 
-        link: "#",
-        platform: "steam" // No platform
-    },
-    3: { 
-        title: "Project Luna", 
-        video: "https://www.youtube.com/embed/qrkHyet6y5o", 
-        desc: "Sci-fi adventure on Steam.", 
-        link: "https://store.steampowered.com/app/1950760/Project_Luna/",
-        platform: "steam" // Added platform indicator
-    },
-    4: { 
-        title: "Robo Rob", 
-        video: "https://www.youtube.com/embed/fy6DlFiszWI", 
-        desc: "Rage-inducing puzzle platformer on Steam.", 
-        link: "https://store.steampowered.com/app/2291910/Robo_Rob/",
-        platform: "steam" // Added platform indicator
-    },
-    5: { 
-        title: "Silly Drifters", 
-        video: "https://www.youtube.com/embed/XK1AhpbhdwE", 
-        desc: "A physics-based driving game.", 
-        link: "https://ciarantdev.itch.io/sillydrifters",
-        platform: "itch" // Added platform indicator
-    },
-    6: { 
-        title: "Frontier Manager", 
-        video: "https://www.youtube.com/embed/adfmsK73c90", 
-        desc: "An idle space sim.", 
-        link: "https://ciarantdev.itch.io/satellite",
-        platform: "itch" // Added platform indicator
-    },
-    7: { 
-        title: "Wild Heart", 
-        video: "", 
-        desc: "A chill 3d adventure.", 
-        link: "#",
-        platform: "itch" // No platform
-    },
-    8: { 
-        title: "Starfarer", 
-        video: "", 
-        desc: "A scifi co-op adventure.", 
-        link: "#",
-        platform: "itch" // No platform
-    },
-    9: { 
-        title: "Super Jump", 
-        video: "", 
-        desc: "A fast-paced platformer.", 
-        link: "#",
-        platform: "itch" // No platform
-    }
-};
->>>>>>> parent of 3c5337f (moved things again)
 
-    // Project Data for Modal
+    // Project Data for Modal and Progress Sync
     const projects = {
-        1: { video: "", desc: "A chill 3D platformer.", link: "https://ciarantdev.itch.io/cosmos-adventure-demo" },
-        2: { video: "", desc: "Fast-paced tactical shooter.", link: "#" },
-        3: { video: "https://www.youtube.com/embed/qrkHyet6y5o", desc: "Sci-fi adventure on Steam.", link: "https://store.steampowered.com/app/1950760/Project_Luna/" },
-        4: { video: "https://www.youtube.com/embed/fy6DlFiszWI", desc: "Rage-inducing puzzle platformer on Steam.", link: "https://store.steampowered.com/app/2291910/Robo_Rob/" },
-        5: { video: "https://www.youtube.com/embed/XK1AhpbhdwE", desc: "A physics-based driving game.", link: "https://ciarantdev.itch.io/sillydrifters" },
-        6: { video: "https://www.youtube.com/embed/adfmsK73c90", desc: "An idle space sim.", link: "https://ciarantdev.itch.io/satellite" },
-        7: { video: "", desc: "A chill 3D adventure.", link: "#" },
-        8: { video: "", desc: "A scifi co-op adventure.", link: "#" },
-        9: { video: "https://www.youtube.com/embed/7PZcmBfICuI", desc: "A fast-paced platformer.", link: "#" }
+        1: { video: "", desc: "A chill 3D platformer.", link: "https://ciarantdev.itch.io/cosmos-adventure-demo", progress: 100 },
+        2: { video: "", desc: "Fast-paced tactical shooter.", link: "#", progress: 60 },
+        3: { video: "https://www.youtube.com/embed/qrkHyet6y5o", desc: "Sci-fi adventure on Steam.", link: "https://store.steampowered.com/app/1950760/Project_Luna/", progress: 100 },
+        4: { video: "https://www.youtube.com/embed/fy6DlFiszWI", desc: "Rage-inducing puzzle platformer on Steam.", link: "https://store.steampowered.com/app/2291910/Robo_Rob/", progress: 100 },
+        5: { video: "https://www.youtube.com/embed/XK1AhpbhdwE", desc: "A physics-based driving game.", link: "https://ciarantdev.itch.io/sillydrifters", progress: 100 },
+        6: { video: "https://www.youtube.com/embed/adfmsK73c90", desc: "An idle space sim.", link: "https://ciarantdev.itch.io/satellite", progress: 100 },
+        7: { video: "", desc: "A chill 3D adventure.", link: "#", progress: 30 },
+        8: { video: "", desc: "A scifi co-op adventure.", link: "#", progress: 70 },
+        9: { video: "https://www.youtube.com/embed/7PZcmBfICuI", desc: "A fast-paced platformer.", link: "#", progress: 50 }
     };
+
+    // Sync Progress Bars from projects Object
+    document.querySelectorAll(".project").forEach(project => {
+        const projectId = project.getAttribute("data-id");
+        const projectData = projects[projectId];
+        if (projectData) {
+            const progressFill = project.querySelector(".progress-fill");
+            progressFill.style.width = `${projectData.progress}%`;
+        }
+    });
 
     // Project Modal Logic
     const projectModal = document.getElementById("modal");
@@ -140,10 +82,12 @@ const projects = {
 
     // Badge Modal Logic
     const badges = {
-        1: { title: "Bronze Twitch", image: "images/bronze-twitch.png", desc: "Reached 200 followers" },
-        4: { title: "Bronze YouTube", image: "images/bronze-youtube.png", desc: "Reached 500 subscribers" },
-        5: { title: "Silver YouTube", image: "images/silver-youtube.png", desc: "Reached 1000 subscribers" },
-        6: { title: "Gold YouTube", image: "images/gold-youtube.png", desc: "Reached 3000 subscribers" },
+        1: { title: "Bronze Twitch", image: "images/bronze-twitch.png", desc: "Reached Bronze Tier on Twitch" },
+        2: { title: "Silver Twitch", image: "images/silver-twitch.png", desc: "Reached Silver Tier on Twitch" },
+        3: { title: "Gold Twitch", image: "images/gold-twitch.png", desc: "Reached Gold Tier on Twitch" },
+        4: { title: "Bronze YouTube", image: "images/bronze-youtube.png", desc: "Reached Bronze Tier on YouTube" },
+        5: { title: "Silver YouTube", image: "images/silver-youtube.png", desc: "Reached Silver Tier on YouTube" },
+        6: { title: "Gold YouTube", image: "images/gold-youtube.png", desc: "Reached Gold Tier on YouTube" },
         7: { title: "Steam Upload", image: "images/steam-badge.png", desc: "Uploaded a Game to Steam" }
     };
 
