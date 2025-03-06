@@ -1,15 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
     // Project Data for Modal and Progress Sync
     const projects = {
-        1: { video: "", desc: "A chill 3D platformer.", link: "https://ciarantdev.itch.io/cosmos-adventure-demo", progress: 10 },
-        2: { video: "", desc: "Fast-paced tactical shooter.", link: "#", progress: 60 },
-        3: { video: "https://www.youtube.com/embed/qrkHyet6y5o", desc: "Sci-fi adventure on Steam.", link: "https://store.steampowered.com/app/1950760/Project_Luna/", progress: 0 },
-        4: { video: "https://www.youtube.com/embed/fy6DlFiszWI", desc: "Rage-inducing puzzle platformer on Steam.", link: "https://store.steampowered.com/app/2291910/Robo_Rob/", progress: 100 },
-        5: { video: "https://www.youtube.com/embed/XK1AhpbhdwE", desc: "A physics-based driving game.", link: "https://ciarantdev.itch.io/sillydrifters", progress: 100 },
-        6: { video: "https://www.youtube.com/embed/adfmsK73c90", desc: "An idle space sim.", link: "https://ciarantdev.itch.io/satellite", progress: 100 },
-        7: { video: "", desc: "A chill 3D adventure.", link: "#", progress: 0 },
-        8: { video: "", desc: "A scifi co-op adventure.", link: "#", progress: 0 },
-        9: { video: "https://www.youtube.com/embed/7PZcmBfICuI", desc: "A fast-paced platformer.", link: "#", progress: 0 }
+        1: { video: "", desc: "A chill 3D platformer.", link: "https://ciarantdev.itch.io/cosmos-adventure-demo", progress: 100, github: "https://github.com/C1arant/Cosmos-Adventure" },
+        2: { video: "", desc: "Fast-paced tactical shooter.", link: "#", progress: 60, github: "https://github.com/C1arant/Cyber-League" },
+        3: { video: "https://www.youtube.com/embed/qrkHyet6y5o", desc: "Sci-fi adventure on Steam.", link: "https://store.steampowered.com/app/1950760/Project_Luna/", progress: 100, github: "https://github.com/C1arant/Project-Luna" },
+        4: { video: "https://www.youtube.com/embed/fy6DlFiszWI", desc: "Rage-inducing puzzle platformer on Steam.", link: "https://store.steampowered.com/app/2291910/Robo_Rob/", progress: 100, github: "https://github.com/C1arant/Robo-Rob" },
+        5: { video: "https://www.youtube.com/embed/XK1AhpbhdwE", desc: "A physics-based driving game.", link: "https://ciarantdev.itch.io/sillydrifters", progress: 100, github: "https://github.com/C1arant/Silly-Drifters" },
+        6: { video: "https://www.youtube.com/embed/adfmsK73c90", desc: "An idle space sim.", link: "https://ciarantdev.itch.io/satellite", progress: 100, github: "https://github.com/C1arant/Frontier-Manager" },
+        7: { video: "", desc: "A chill 3D adventure.", link: "#", progress: 30, github: "https://github.com/C1arant/Wild-Heart" },
+        8: { video: "", desc: "A scifi co-op adventure.", link: "#", progress: 70, github: "https://github.com/C1arant/Star-Farer" },
+        9: { video: "", desc: "A fast-paced platformer.", link: "#", progress: 50, github: "https://github.com/C1arant/Carbon" }
     };
 
     // Sync Progress Bars from projects Object
@@ -32,17 +32,26 @@ document.addEventListener("DOMContentLoaded", () => {
     const projectModalIcons = document.getElementById("modal-icons");
     const projectCloseBtn = document.querySelector("#modal .close");
 
+    // Add Last Updated Element to Modal
+    const lastUpdated = document.createElement("p");
+    lastUpdated.id = "modal-last-updated";
+    lastUpdated.style.color = "#cccccc";
+    projectModal.querySelector(".modal-content").insertBefore(lastUpdated, projectModalLink);
+
     document.querySelectorAll(".details-btn").forEach(btn => {
-        btn.addEventListener("click", (e) => {
+        btn.addEventListener("click", async (e) => {
             e.preventDefault();
             const projectId = btn.parentElement.getAttribute("data-id");
             const project = projects[projectId];
             
-            projectModalTitle.textContent = btn.parentElement.querySelector("h3").textContent; // From HTML
+            projectModalTitle.textContent = btn.parentElement.querySelector("h3").textContent;
             projectModalDesc.textContent = project.desc;
             projectModalLink.href = project.link;
 
             projectModalIcons.innerHTML = btn.parentElement.querySelector("i") ? btn.parentElement.querySelector("i").outerHTML : "";
+
+            // Show/Hide Play Button
+            projectModalLink.style.display = project.link === "#" ? "none" : "inline-flex";
 
             if (project.video) {
                 projectModalVideo.src = project.video;
@@ -54,6 +63,26 @@ document.addEventListener("DOMContentLoaded", () => {
                 projectModalComingSoon.style.display = "block";
             }
 
+            // Fetch Last Updated from GitHub
+            if (project.github) {
+                try {
+                    const repoPath = project.github.replace("https://github.com/", "");
+                    const response = await fetch(`https://api.github.com/repos/${repoPath}/commits`);
+                    const commits = await response.json();
+                    if (commits.length > 0) {
+                        const lastCommitDate = new Date(commits[0].commit.author.date);
+                        lastUpdated.textContent = `Last Updated: ${lastCommitDate.toLocaleDateString()}`;
+                    } else {
+                        lastUpdated.textContent = "Last Updated: Not available";
+                    }
+                } catch (error) {
+                    lastUpdated.textContent = "Last Updated: Unable to fetch";
+                    console.error("GitHub API error:", error);
+                }
+            } else {
+                lastUpdated.textContent = "Last Updated: No GitHub repo";
+            }
+
             projectModal.style.display = "block";
         });
     });
@@ -63,6 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
         projectModalVideo.src = "";
         projectModalComingSoon.style.display = "none";
         projectModalIcons.innerHTML = "";
+        lastUpdated.textContent = "";
     });
 
     window.addEventListener("click", (e) => {
@@ -71,15 +101,18 @@ document.addEventListener("DOMContentLoaded", () => {
             projectModalVideo.src = "";
             projectModalComingSoon.style.display = "none";
             projectModalIcons.innerHTML = "";
+            lastUpdated.textContent = "";
         }
     });
 
     // Badge Modal Logic
     const badges = {
-        1: { title: "Bronze Twitch", image: "images/bronze-twitch.png", desc: "Reached 200 followers" },
-        4: { title: "Bronze YouTube", image: "images/bronze-youtube.png", desc: "Reached 500 subscribers" },
-        5: { title: "Silver YouTube", image: "images/silver-youtube.png", desc: "Reached 1000" },
-        6: { title: "Gold YouTube", image: "images/gold-youtube.png", desc: "Reached 3000 subscribers" },
+        1: { title: "Bronze Twitch", image: "images/bronze-twitch.png", desc: "Reached Bronze Tier on Twitch" },
+        2: { title: "Silver Twitch", image: "images/silver-twitch.png", desc: "Reached Silver Tier on Twitch" },
+        3: { title: "Gold Twitch", image: "images/gold-twitch.png", desc: "Reached Gold Tier on Twitch" },
+        4: { title: "Bronze YouTube", image: "images/bronze-youtube.png", desc: "Reached Bronze Tier on YouTube" },
+        5: { title: "Silver YouTube", image: "images/silver-youtube.png", desc: "Reached Silver Tier on YouTube" },
+        6: { title: "Gold YouTube", image: "images/gold-youtube.png", desc: "Reached Gold Tier on YouTube" },
         7: { title: "Steam Upload", image: "images/steam-badge.png", desc: "Uploaded a Game to Steam" }
     };
 
