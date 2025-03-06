@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Your GitHub Personal Access Token (replace with your actual token)
-    const GITHUB_TOKEN = "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"; // Replace this with your PAT
+    // Your GitHub Personal Access Token
+    const GITHUB_TOKEN = "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";
 
     // Project Data for Modal and Progress Sync
     const projects = {
@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
         6: { video: "https://www.youtube.com/embed/adfmsK73c90", desc: "An idle space sim.", link: "https://ciarantdev.itch.io/satellite", progress: 100, github: "https://github.com/C1arant/U.FrontiereManager" },
         7: { video: "", desc: "A chill 3D adventure.", link: "#", progress: 0, github: "https://github.com/C1arant/Wild-Heart" },
         8: { video: "", desc: "A scifi co-op adventure.", link: "#", progress: 0, github: "https://github.com/C1arant/SpaceRPG" },
-        9: { video: "", desc: "A fast-paced platformer.", link: "#", progress: 0, github: "https://github.com/C1arant/FPS" }
+        9: { video: "https://www.youtube.com/embed/7PZcmBfICuI", desc: "A fast-paced platformer.", link: "#", progress: 0, github: "https://github.com/C1arant/FPS" }
     };
 
     // Sync Progress Bars from projects Object
@@ -78,17 +78,18 @@ document.addEventListener("DOMContentLoaded", () => {
                         }
                     });
                     if (!response.ok) {
-                        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                        const errorText = await response.text();
+                        throw new Error(`HTTP ${response.status}: ${response.statusText} - ${errorText}`);
                     }
                     const commits = await response.json();
-                    if (commits.length > 0) {
+                    if (Array.isArray(commits) && commits.length > 0) {
                         const lastCommitDate = new Date(commits[0].commit.author.date);
                         lastUpdated.textContent = `Last Updated: ${lastCommitDate.toLocaleDateString()}`;
                     } else {
                         lastUpdated.textContent = "Last Updated: No commits found";
                     }
                 } catch (error) {
-                    lastUpdated.textContent = "Last Updated: Unable to fetch";
+                    lastUpdated.textContent = `Last Updated: Fetch failed (${error.message})`;
                     console.error(`GitHub API error for ${project.github}:`, error.message);
                 }
             } else {
