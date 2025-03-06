@@ -4,241 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CiaranThistle | Game Dev Portfolio</title>
-    <!-- Favicon -->
     <link rel="icon" type="image/png" href="images/Logo.png">
-    <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-        html, body {
-            margin: 0;
-            padding: 0;
-            background: #1a1a1a;
-            color: #e0e0e0;
-            font-family: Arial, sans-serif;
-        }
-        header {
-            text-align: center;
-            padding: 20px;
-            background: #2c2c2c;
-            border-bottom: 2px solid #444;
-        }
-        #logo {
-            max-width: 150px;
-            height: auto;
-            margin-bottom: 10px;
-        }
-        h1, h2, h3 {
-            text-align: center;
-            color: #ffffff;
-        }
-        p {
-            color: #cccccc;
-        }
-        #about {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background: #2c2c2c;
-            border-radius: 10px;
-            text-align: center;
-        }
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 0 20px;
-        }
-        .project {
-            background: #2c2c2c;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
-            border: 2px solid #00b4d8;
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-        }
-        .project:hover {
-            transform: translateY(-10px) rotate(2deg);
-            box-shadow: 0 10px 20px rgba(0, 180, 216, 0.5);
-        }
-        .project img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            margin-bottom: 15px;
-        }
-        .project .steam-icon, .project .itch-icon {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            font-size: 1.5em;
-            color: #00b4d8;
-        }
-        .details-btn {
-            display: inline-block;
-            padding: 10px 20px;
-            background: #00b4d8;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 15px;
-        }
-        .details-btn:hover {
-            background: #0096c7;
-        }
-        #tools-skills-badges-container {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 0 20px;
-        }
-        #tools, #skills, #badges {
-            flex: 1;
-            max-width: 350px; /* Adjusted to fit 3 sections */
-            padding: 20px;
-            background: #2c2c2c;
-            border-radius: 10px;
-            text-align: center;
-        }
-        #tools ul, #skills ul, #badges ul {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-        }
-        #tools li, #skills li {
-            background: #00b4d8;
-            color: #fff;
-            padding: 8px 15px;
-            border-radius: 5px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        #tools i, #skills i {
-            font-size: 1.2em;
-        }
-        #badges li {
-            cursor: pointer;
-        }
-        .badge {
-            width: 64px;
-            height: 64px;
-            transition: transform 0.3s ease;
-        }
-        .badge:hover {
-            transform: scale(1.1);
-        }
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            z-index: 1000;
-        }
-        .modal-content {
-            background: #2c2c2c;
-            margin: 10% auto;
-            padding: 20px;
-            width: 80%;
-            max-width: 600px;
-            border-radius: 8px;
-            color: #e0e0e0;
-            text-align: center;
-            position: relative;
-        }
-        .close {
-            float: right;
-            font-size: 28px;
-            color: #fff;
-            cursor: pointer;
-        }
-        .close:hover {
-            color: #ff5555;
-        }
-        .play-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 10px 20px;
-            background: #00b4d8;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-            margin-top: 15px;
-            font-size: 1em;
-        }
-        .play-btn:hover {
-            background: #0096c7;
-        }
-        #modal-video {
-            display: block;
-            margin: 15px auto;
-        }
-        #modal-coming-soon {
-            display: none;
-            font-size: 1.5em;
-            color: #00b4d8;
-            margin: 15px auto;
-        }
-        #modal-icons {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            font-size: 1.5em;
-            color: #00b4d8;
-        }
-        #badge-modal-image {
-            max-width: 256px; /* Half of 512x512 for modal */
-            height: auto;
-            margin: 15px auto;
-        }
-        .progress-bar {
-            width: 100%;
-            height: 10px;
-            background: #444;
-            border-radius: 5px;
-            margin-top: 10px;
-            overflow: hidden;
-        }
-        .progress-fill {
-            height: 100%;
-            background: #00b4d8;
-            border-radius: 5px;
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #2c2c2c;
-            margin-top: 20px;
-        }
-        footer a {
-            color: #00b4d8;
-            text-decoration: none;
-        }
-        footer a:hover {
-            color: #0096c7;
-        }
+        html, body { margin: 0; padding: 0; background: #1a1a1a; color: #e0e0e0; font-family: Arial, sans-serif; }
+        header { text-align: center; padding: 20px; background: #2c2c2c; border-bottom: 2px solid #444; }
+        #logo { max-width: 150px; height: auto; margin-bottom: 10px; }
+        h1, h2, h3 { text-align: center; color: #ffffff; }
+        p { color: #cccccc; }
+        #about { max-width: 800px; margin: 20px auto; padding: 20px; background: #2c2c2c; border-radius: 10px; text-align: center; }
+        .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; max-width: 1200px; margin: 20px auto; padding: 0 20px; }
+        .project { background: #2c2c2c; padding: 20px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4); border: 2px solid #00b4d8; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease; position: relative; }
+        .project:hover { transform: translateY(-10px) rotate(2deg); box-shadow: 0 10px 20px rgba(0, 180, 216, 0.5); }
+        .project img { max-width: 100%; height: auto; border-radius: 8px; margin-bottom: 15px; }
+        .project .steam-icon, .project .itch-icon { position: absolute; top: 10px; right: 10px; font-size: 1.5em; color: #00b4d8; }
+        .details-btn { display: inline-block; padding: 10px 20px; background: #00b4d8; color: #fff; text-decoration: none; border-radius: 5px; margin-top: 15px; }
+        .details-btn:hover { background: #0096c7; }
+        #tools-skills-badges-container { display: flex; justify-content: center; gap: 20px; max-width: 1200px; margin: 20px auto; padding: 0 20px; }
+        #tools, #skills, #badges { flex: 1; max-width: 350px; padding: 20px; background: #2c2c2c; border-radius: 10px; text-align: center; }
+        #tools ul, #skills ul, #badges ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
+        #tools li, #skills li { background: #00b4d8; color: #fff; padding: 8px 15px; border-radius: 5px; display: flex; align-items: center; gap: 8px; }
+        #tools i, #skills i { font-size: 1.2em; }
+        #badges li { cursor: pointer; }
+        .badge { width: 64px; height: 64px; transition: transform 0.3s ease; }
+        .badge:hover { transform: scale(1.1); }
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.9); z-index: 1000; }
+        .modal-content { background: #2c2c2c; margin: 10% auto; padding: 20px; width: 80%; max-width: 600px; border-radius: 8px; color: #e0e0e0; text-align: center; position: relative; }
+        .close { float: right; font-size: 28px; color: #fff; cursor: pointer; }
+        .close:hover { color: #ff5555; }
+        .play-btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; background: #00b4d8; color: #fff; border: none; border-radius: 5px; cursor: pointer; text-decoration: none; margin-top: 15px; font-size: 1em; }
+        .play-btn:hover { background: #0096c7; }
+        #modal-video { display: block; margin: 15px auto; }
+        #modal-coming-soon { display: none; font-size: 1.5em; color: #00b4d8; margin: 15px auto; }
+        #modal-icons { position: absolute; top: 10px; left: 10px; font-size: 1.5em; color: #00b4d8; }
+        #badge-modal-image { max-width: 256px; height: auto; margin: 15px auto; }
+        .progress-bar { width: 100%; height: 10px; background: #444; border-radius: 5px; margin-top: 10px; overflow: hidden; }
+        .progress-fill { height: 100%; background: #00b4d8; border-radius: 5px; }
+        footer { text-align: center; padding: 20px; background: #2c2c2c; margin-top: 20px; }
+        footer a { color: #00b4d8; text-decoration: none; }
+        footer a:hover { color: #0096c7; }
         @media (max-width: 1000px) {
-            #tools-skills-badges-container {
-                flex-direction: column;
-                align-items: center;
-            }
-            #tools, #skills, #badges {
-                max-width: 800px;
-            }
+            #tools-skills-badges-container { flex-direction: column; align-items: center; }
+            #tools, #skills, #badges { max-width: 800px; }
         }
     </style>
 </head>
@@ -249,15 +56,12 @@
         <p>Game Developer | Crafting Worlds & Challenges</p>
     </header>
 
-    <!-- About Me Section -->
     <section id="about">
         <h2>About Me</h2>
         <p>Hi, I’m CiaranThistle, a game development & Video Production Student with a knack for creating diverse and engaging experiences. In the future I want to focus more on game design. My dream job would be to work on games like Star Citizen</p>
     </section>
 
-    <!-- Tools, Skills, and Badges Container -->
     <div id="tools-skills-badges-container">
-        <!-- Tools Section -->
         <section id="tools">
             <h2>Tools</h2>
             <ul>
@@ -277,7 +81,6 @@
             </ul>
         </section>
 
-        <!-- Skills Section -->
         <section id="skills">
             <h2>Skills</h2>
             <ul>
@@ -291,7 +94,6 @@
             </ul>
         </section>
 
-        <!-- Badges Section -->
         <section id="badges">
             <h2>Badges</h2>
             <ul>
@@ -306,7 +108,6 @@
         </section>
     </div>
 
-    <!-- Projects Section -->
     <section id="projects">
         <h2>My Projects</h2>
         <div class="project-grid">
@@ -385,7 +186,6 @@
         </div>
     </section>
 
-    <!-- Project Modal -->
     <div id="modal" class="modal">
         <div class="modal-content">
             <span class="close">×</span>
@@ -398,7 +198,6 @@
         </div>
     </div>
 
-    <!-- Badge Modal -->
     <div id="badge-modal" class="modal">
         <div class="modal-content">
             <span class="close">×</span>
