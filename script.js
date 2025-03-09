@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
         4: { video: "https://www.youtube.com/embed/fy6DlFiszWI", desc: "Rage-inducing puzzle platformer on Steam.", link: "https://store.steampowered.com/app/2291910/Robo_Rob/" },
         5: { video: "https://www.youtube.com/embed/XK1AhpbhdwE", desc: "A physics-based driving game.", link: "https://ciarantdev.itch.io/sillydrifters" },
         6: { video: "https://www.youtube.com/embed/adfmsK73c90", desc: "An idle space sim.", link: "https://ciarantdev.itch.io/satellite" },
-        7: { video: "https://youtu.be/jhYhq5vSfng", desc: "A Rage Driving Game", link: "https://ciarantdev.itch.io/driftndrive" },
+        7: { video: "https://www.youtube.com/embed/jhYhq5vSfng", desc: "A Rage Driving Game", link: "https://ciarantdev.itch.io/driftndrive" },
         8: { video: "", desc: "A scifi co-op adventure.", link: "#" },
         9: { video: "https://www.youtube.com/embed/7PZcmBfICuI", desc: "A fast-paced platformer.", link: "#" }
     };
